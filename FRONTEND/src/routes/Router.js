@@ -11,11 +11,10 @@ import Bookmark from "routes/Bookmark";
 import Detail from "routes/Detail";
 import Explore from "routes/Explore";
 import Home from "routes/Home";
-import Leftbar from "routes/Leftbar";
+import BottomBar from "routes/Bottombar";
 import Login from "routes/Login";
 import Popular from "routes/Popular";
 import Profile from "routes/Profile";
-import Rightbar from "routes/Rightbar";
 
 const AppRouter = () => {
 	const dispatch = useDispatch();
@@ -49,11 +48,10 @@ const AppRouter = () => {
 				class={
 					"w-full h-full bg-white transition delay-75 duration-300 dark:bg-black " +
 					(loginToken === "login" && currentUser
-						? "flex flex-row px-0 lg:px-36"
+						? "flex flex-row"
 						: "")
 				}
 			>
-				{loginToken === "login" && currentUser && <Leftbar />}
 				<Switch>
 					{loginToken === "login" && currentUser ? (
 						<>
@@ -74,6 +72,7 @@ const AppRouter = () => {
 						</>
 					)}
 				</Switch>
+				{loginToken === "login" && currentUser && <BottomBar />}
 			</div>
 		</Router>
 	);
