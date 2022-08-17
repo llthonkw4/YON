@@ -20,7 +20,7 @@ import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser, setLoginToken } from "reducers/user";
-const BottomBar = () => {
+const TopBar = () => {
 	const [loading, setLoading] = useState(false);
 	const dispatch = useDispatch();
 	const location = useLocation();
@@ -120,115 +120,49 @@ const BottomBar = () => {
 
 	return (
 		<>
-			<div class="select-none h-16 pt-4 pr-4 w-full flex flex-row border-r border-gray-200 justify-center fixed bottom-0 dark:text-white z-10 bg-gray-500">
-				<div class="flex flex-row justify-between">
-					<div class="flex flex-row w-full ">
-						{/* 기본 트윗 홈 */}
-						<div class="w-auto flex flex-row items-center">
-							<Link
-								to="/"
-								onClick={() => onSelected(1)}
-								class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
-							>
-								{selected === 1 ? (
-									<>
-										{" "}
-										<AiFillHome size={32}/>
-									</>
-								) : (
-									<>
-										<AiOutlineHome size={32}/>
-									</>
-								)}
-							</Link>
-						</div>
-
-						<div class="w-auto flex flex-row items-center">
-							<Link
-								to={"/explore/jweets"}
-								onClick={() => onSelected(2)}
-								class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
-							>
-								{selected === 2 ? (
-									<>
-										<HiHashtag size={32}/>
-									</>
-								) : (
-									<>
-										<HiOutlineHashtag size={32}/>
-									</>
-								)}
-							</Link>
-						</div>
-						<div class="w-auto flex flex-row items-center">
-							<Link
-								to={"/bookmark"}
-								onClick={() => onSelected(3)}
-								class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
-							>
-								{selected === 3 ? (
-									<>
-										<MdBookmark size={32}/>
-									</>
-								) : (
-									<>
-										<MdBookmarkBorder size={32}/>
-									</>
-								)}
-							</Link>
-						</div>
-						<div class="w-auto flex flex-row items-center">
-							<Link
-								to={"/popular"}
-								onClick={() => onSelected(4)}
-								class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
-							>
-								{selected === 4 ? (
-									<>
-										<HiFire size={32}/>
-									</>
-								) : (
-									<>
-										<HiOutlineFire size={32}/>
-									</>
-								)}
-							</Link>
-						</div>
-						<div class="w-auto flex flex-row items-center">
-							<Link
-								to={"/profile/jweet/" + currentUser.uid}
-								onClick={() => onSelected(5)}
-								class="p-3 rounded-full flex flex-row text-xl mb-4 hover:bg-gray-200 transition delay-50 duration-300"
-							>
-								{selected === 5 ? (
-									<>
-										<BsPersonFill size={32}/>
-									</>
-								) : (
-									<>
-										<BsPerson size={32}/>
-									</>
-								)}
-							</Link>
-						</div>
-
-						<div class="w-full border-b border-gray-200 mb-2"></div>
-						<div class="cursor-pointer w-auto flex flex-row items-center">
-							<div class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300">
-								<IoNotificationsOutline size={32}/>
-							</div>
-						</div>
-						<div class="relative cursor-pointer w-auto flex flex-row items-center">
-							<div class=" p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300">
-								<CgMoreO size={32}/>
-							</div>
-						</div>
-						<div
-							onClick={handleCreateOpen}
-							class="w-full rounded-full text-white font-bold bg-purple-400 flex justify-center py-3 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
+			<div class="select-none pt-1 h-16 w-full flex flex-row border-r border-gray-200 justify-center fixed top-0 dark:text-white z-10 bg-gray-100">
+				<div class="flex flex-row justify-around w-3/5">
+					{/* 기본 트윗 홈 */}
+					<div class="mx-5 w-auto flex flex-row items-center">
+						<Link
+							to={"/bookmark"}
+							onClick={() => onSelected(3)}
+							class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
 						>
-							Jweet
-						</div>
+							{selected === 3 ? (
+								<>
+									<MdBookmark size={32}/>
+								</>
+							) : (
+								<>
+									<MdBookmarkBorder size={32}/>
+								</>
+							)}
+						</Link>
+					</div>
+					<Link to="/home">
+					<div
+						class="mt-2 mb-3 mx-5 px-5 rounded-full text-white font-bold bg-black flex justify-center py-2 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
+					>
+						YON
+					</div>
+					</Link>
+					<div class="mx-5 w-auto flex flex-row items-center">
+						<Link
+							to={"/popular"}
+							onClick={() => onSelected(4)}
+							class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
+						>
+							{selected === 4 ? (
+								<>
+									<HiFire size={32}/>
+								</>
+							) : (
+								<>
+									<HiOutlineFire size={32}/>
+								</>
+							)}
+						</Link>
 					</div>
 				</div>
 			</div>
@@ -273,4 +207,4 @@ const BottomBar = () => {
 	);
 };
 
-export default BottomBar;
+export default TopBar;
