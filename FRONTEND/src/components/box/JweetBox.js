@@ -159,7 +159,7 @@ const JweetBox = (props) => {
             {loading ? (
               <div class='w-full flex flex-row mr-2 justify-between items-center'>
                 <div class='w-full flex flex-row'>
-                  <h1 class='text-base font-bold mr-4'>
+                  <h1 class='text-base font-bold'>
                     {creatorInfo.displayName}
                   </h1>
                   <p class='text-gray-500 whitespace-pre-wrap break-words'>

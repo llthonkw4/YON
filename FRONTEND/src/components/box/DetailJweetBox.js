@@ -97,7 +97,7 @@ const DetailJweetBox = (props) => {
 								</Link>
 								<div class="w-full flex flex-row mr-2 justify-between items-center">
 									<div class="flex flex-col pl-2">
-										<h1 class="text-base font-bold mr-4">
+										<h1 class="text-base font-bold">
 											{creatorInfo.displayName}
 										</h1>
 										<p class="text-xs text-gray-500">
