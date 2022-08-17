@@ -81,7 +81,7 @@ const Profile = ({ match }) => {
 							</div>
 							<div class="flex flex-col">
 								<div class="font-bold text-xl">{info.displayName}</div>
-								<div>{myJweets.length} Jweets</div>
+								<div>{myJweets.length} Questions</div>
 							</div>
 						</div>
 						<div class="w-full flex flex-col relative">
@@ -117,38 +117,35 @@ const Profile = ({ match }) => {
 							</div>
 						</div>
 						<div class="w-full flex flex-col pl-4 pr-4 mb-4">
-							<h1 class="font-bold text-xl">{info.displayName}</h1>
-							<p class="text-gray-400 mb-2">@{info.email.split("@")[0]}</p>
-							<p class="py-8 px-2 text-sm text-gray-800 border-t border-b border-gray-200">
-								{info.description === ""
-									? "소개글이 없습니다."
-									: info.description}
-							</p>
+
+							<div class="flex flex-row">
+								<div class="w-1/2">
+									<h1 class="font-bold text-xl">{info.displayName}</h1>
+									<p class="text-gray-400 mb-2">@{info.email.split("@")[0]}</p>
+								</div>
+								<div class="w-1/2">
+									<p>팔로우</p>
+									<p>팔로잉</p>
+								</div>
+							</div>
+
 						</div>
-						<div class="w-full flex flex-row ">
+						<div class="w-full flex flex-row border-t border-gray-200">
 							<MenuButton
 								url={"/profile/jweet/" + uid}
 								onSelected={onSelected}
 								selected={selected}
 								num={1}
-								width={"w-1/3"}
-								text={"Jweets"}
+								width={"w-1/2"}
+								text={"Questions"}
 							/>
 							<MenuButton
 								url={"/profile/like/" + uid}
 								onSelected={onSelected}
 								selected={selected}
 								num={2}
-								width={"w-1/3"}
+								width={"w-1/2"}
 								text={"Likes"}
-							/>
-							<MenuButton
-								url={"/profile/rejweet/" + uid}
-								onSelected={onSelected}
-								selected={selected}
-								num={3}
-								width={"w-1/3"}
-								text={"Rejweets"}
 							/>
 						</div>
 						<Switch>
