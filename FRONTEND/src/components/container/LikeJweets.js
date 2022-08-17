@@ -36,7 +36,7 @@ const LikeJweets = ({ match }) => {
 	}, [uid]);
 
 	return (
-		<div>
+		<div class="pb-20">
 			{likeJweets.length !== 0 ? (
 				likeJweets.map((jweet, index) => {
 					return (

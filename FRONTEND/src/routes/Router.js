@@ -11,6 +11,7 @@ import Bookmark from "routes/Bookmark";
 import Detail from "routes/Detail";
 import Explore from "routes/Explore";
 import Home from "routes/Home";
+import TopBar from "routes/Topbar";
 import BottomBar from "routes/Bottombar";
 import Login from "routes/Login";
 import Popular from "routes/Popular";
@@ -52,6 +53,7 @@ const AppRouter = () => {
 						: "")
 				}
 			>
+				{loginToken === "login" && currentUser && <TopBar />}
 				<Switch>
 					{loginToken === "login" && currentUser ? (
 						<>

@@ -39,7 +39,7 @@ const MyJweets = ({ match }) => {
 	}, [uid]);
 
 	return (
-		<div>
+		<div class="pb-20">
 			{myJweets.length !== 0 ? (
 				myJweets.map((jweet, index) => {
 					return (
