@@ -74,7 +74,6 @@ const AppRouter = () => {
 						</>
 					)}
 				</Switch>
-				{loginToken === "login" && currentUser && <Rightbar />}
 			</div>
 		</Router>
 	);

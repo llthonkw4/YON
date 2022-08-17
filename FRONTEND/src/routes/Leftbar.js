@@ -120,8 +120,8 @@ const Leftbar = () => {
 
 	return (
 		<>
-			<div class="select-none w-64 pt-4 pr-4 h-full flex flex-col border-r border-gray-200 justify-between fixed dark:text-white">
-				<div class="flex flex-col">
+			<div class="select-none h-66 pt-4 pr-4 w-full flex flex-row border-r border-gray-200 justify-between fixed bottom-0 dark:text-white z-10 bg-white">
+				<div class="flex flex-row">
 					<div class="flex flex-row justify-between items-center">
 						<Link class="h-16 mb-4" to="/" onClick={() => setSelected(1)}>
 							<img
@@ -138,7 +138,7 @@ const Leftbar = () => {
 							color={"warning"}
 						/> */}
 					</div>
-					<div class="flex flex-col w-full ">
+					<div class="flex flex-row w-full ">
 						{/* 기본 트윗 홈 */}
 						<div class="w-auto flex flex-row items-center">
 							<Link
@@ -149,11 +149,11 @@ const Leftbar = () => {
 								{selected === 1 ? (
 									<>
 										{" "}
-										<AiFillHome size={32} class="mr-4" /> <b>Home</b>
+										<AiFillHome size={32} class="mr-4" />
 									</>
 								) : (
 									<>
-										<AiOutlineHome size={32} class="mr-4" /> Home
+										<AiOutlineHome size={32} class="mr-4" />
 									</>
 								)}
 							</Link>
@@ -167,11 +167,11 @@ const Leftbar = () => {
 							>
 								{selected === 2 ? (
 									<>
-										<HiHashtag size={32} class="mr-4" /> <b>Explore</b>
+										<HiHashtag size={32} class="mr-4" />
 									</>
 								) : (
 									<>
-										<HiOutlineHashtag size={32} class="mr-4" /> Explore
+										<HiOutlineHashtag size={32} class="mr-4" />
 									</>
 								)}
 							</Link>
@@ -184,11 +184,11 @@ const Leftbar = () => {
 							>
 								{selected === 3 ? (
 									<>
-										<MdBookmark size={32} class="mr-4" /> <b>Bookmarks</b>
+										<MdBookmark size={32} class="mr-4" />
 									</>
 								) : (
 									<>
-										<MdBookmarkBorder size={32} class="mr-4" /> Bookmarks
+										<MdBookmarkBorder size={32} class="mr-4" />
 									</>
 								)}
 							</Link>
@@ -201,11 +201,11 @@ const Leftbar = () => {
 							>
 								{selected === 4 ? (
 									<>
-										<HiFire size={32} class="mr-4" /> <b>Popular</b>
+										<HiFire size={32} class="mr-4" />
 									</>
 								) : (
 									<>
-										<HiOutlineFire size={32} class="mr-4" /> Popular
+										<HiOutlineFire size={32} class="mr-4" />
 									</>
 								)}
 							</Link>
@@ -218,11 +218,11 @@ const Leftbar = () => {
 							>
 								{selected === 5 ? (
 									<>
-										<BsPersonFill size={32} class="mr-4" /> <b>Profile</b>
+										<BsPersonFill size={32} class="mr-4" />
 									</>
 								) : (
 									<>
-										<BsPerson size={32} class="mr-4" /> Profile
+										<BsPerson size={32} class="mr-4" />
 									</>
 								)}
 							</Link>
@@ -232,12 +232,11 @@ const Leftbar = () => {
 						<div class="cursor-pointer w-auto flex flex-row items-center">
 							<div class="pl-3 pr-5 py-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300">
 								<IoNotificationsOutline size={32} class="mr-4" />
-								Notifications
 							</div>
 						</div>
 						<div class="relative cursor-pointer w-auto flex flex-row items-center">
 							<div class=" pl-3 pr-5 py-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300">
-								<CgMoreO size={32} class="mr-4" /> more
+								<CgMoreO size={32} class="mr-4" />
 							</div>
 						</div>
 						<div
@@ -245,72 +244,6 @@ const Leftbar = () => {
 							class="w-full rounded-full text-white font-bold bg-purple-400 flex justify-center py-3 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
 						>
 							Jweet
-						</div>
-					</div>
-				</div>
-				<div ref={profileRef}>
-					{
-						<div
-							class={
-								"w-full relative transition delay-200 duration-300 " +
-								(profile ? "block" : "hidden")
-							}
-						>
-							<div class="bg-white absolute w-64 py-2 -right-4 bottom-2 border border-gray-300 shadow-lg rounded-3xl">
-								<div class="border-b px-4 border-gray-300 h-16 w-full py-3 flex flex-row justify-between items-center">
-									<div class="h-full flex flex-row items-center ">
-										<div class="h-full ">
-											<img
-												src={photoURL}
-												class="rounded-full object-cover h-full mr-4"
-												alt="default"
-											/>
-										</div>
-										<div class="flex flex-col justify-center">
-											<div>
-												<b>{currentUser.displayName}</b>
-											</div>
-											<div class="text-xs text-gray-400">
-												@{currentUser.email.split("@")[0]}
-											</div>
-										</div>
-									</div>
-									<div>
-										<BiCheck class="text-purple-500" size={20} />
-									</div>
-								</div>
-								<div
-									onClick={handleLogoutOpen}
-									class="cursor-pointer px-4 py-4 hover:bg-gray-100 transition delay-50 duration-300"
-								>
-									Log out @{currentUser.displayName}
-								</div>
-							</div>
-						</div>
-					}
-					<div
-						onClick={toggleProfile}
-						class="h-16 w-full px-3 py-3 rounded-full hover:bg-gray-200 transition delay-50 duration-300 flex flex-row justify-between items-center mb-4 cursor-pointer relative"
-					>
-						<div class="h-full flex flex-row items-center">
-							<div class="h-full ">
-								<img
-									src={photoURL ? photoURL : defaultImg}
-									class="rounded-full object-cover h-full mr-4"
-									alt="default"
-								/>
-							</div>
-							<div class="flex flex-col justify-center">
-								<div>
-									<b>{currentUser.displayName}</b>
-								</div>
-								<div class="text-xs text-gray-400">
-									@{currentUser.email.split("@")[0]}
-								</div>
-							</div>
-						</div>
-						<div>
-							<HiOutlineDotsHorizontal size={20} />
 						</div>
 					</div>
 				</div>
