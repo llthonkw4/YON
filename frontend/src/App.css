@@ -1,0 +1,114 @@
+.topBarWrap{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color:antiquewhite;
+  width:100%;
+  height:66px;
+  z-index:1;
+}
+
+.topBar{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.camIcon{
+  margin-left:10px;
+  border: 1px solid red;
+}
+.logo{
+  border: 1px solid red;
+}
+.settingIcon{
+  margin-right:10px;
+  border: 1px solid red;
+}
+
+.bottomBarWrap{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  position:fixed;
+  bottom:0;
+  left:0;
+  background-color:antiquewhite;
+  width:100%;
+  height:88px;
+  z-index:1;
+}
+
+.bottomBar{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.newSpeedIcon{
+  margin-left:10px;
+  border: 1px solid red;
+}
+.postIcon{
+  border: 1px solid red;
+}
+.myPageIcon{
+  margin-right:10px;
+  border: 1px solid red;
+}
+
+.mainRenderWrap{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  position:fixed;
+  top:0;
+  left:0;
+  padding-top:66px;
+  min-height:100%;
+  position:fixed;
+  width:100%;
+}
+
+.newSpeedWrap{
+  display:flex;
+  flex-direction: column;
+  justify-content: top;
+  min-width:390px;
+  width:60%;
+  background-color:blue;
+  text-align: center;
+}
+
+.postWrap{
+  display:flex;
+  flex-direction: column;
+  justify-content: top;
+  min-width:390px;
+  width:60%;
+  background-color:blueviolet;
+  text-align: center;
+}
+
+.myPageWrap{
+  display:flex;
+  flex-direction: column;
+  justify-content: top;
+  min-width:390px;
+  width:60%;
+  background-color:aquamarine;
+  text-align: center;
+}
+
+.settingPageWrap{
+  display:flex;
+  flex-direction: column;
+  justify-content: top;
+  min-width:390px;
+  width:60%;
+  background-color:brown;
+  text-align: center;
+}
