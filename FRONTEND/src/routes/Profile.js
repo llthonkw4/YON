@@ -71,7 +71,7 @@ const Profile = ({ match }) => {
 		<>
 			{loading ? (
 				<>
-					<div class="flex-1 flex flex-col px-64 pt-16">
+					<div class="flex-1 flex flex-col pt-16">
 						<div class="h-16 w-full px-2 py-2 flex flex-row items-center border-b border-gray-200">
 							<div
 								onClick={() => history.goBack()}
