@@ -3,6 +3,7 @@ import {
 	HiFire,
 	HiOutlineFire,
 } from "react-icons/hi";
+import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 
@@ -53,11 +54,11 @@ const TopBar = () => {
 						>
 							{selected === 3 ? (
 								<>
-									<MdBookmark size={32}/>
+									<AiOutlineHeart size={32}/>
 								</>
 							) : (
 								<>
-									<MdBookmarkBorder size={32}/>
+									<AiTwotoneHeart size={32}/>
 								</>
 							)}
 						</Link>

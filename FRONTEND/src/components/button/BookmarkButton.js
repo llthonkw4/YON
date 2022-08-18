@@ -1,4 +1,5 @@
 import MuiAlert from "@mui/material/Alert";
+import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import Snackbar from "@mui/material/Snackbar";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "mybase";
@@ -78,7 +79,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isDetail }) => {
 					ref={bookmarkRef}
 					id="except"
 					class={
-						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-blue-100 p-2 " +
+						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 " +
 						(isDetail ? "" : "mt-1 mr-1")
 					}
 				>
