@@ -1,5 +1,4 @@
 import LoadingBox from "components/box/LoadingBox";
-
 import JweetBox from "components/box/JweetBox";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "mybase";
@@ -31,8 +30,8 @@ const Popular = () => {
 		return () => setLoading(false); // cleanup function을 이용
 	}, []);
 	return (
-		<>
-			<div class="flex-1 flex flex-col px-64">
+		<div class="flex flex-row w-full justify-center">
+			<div class="flex flex-col pt-16 max-w-4xl">
 				<div class="min-h-16 w-full px-2 py-2 flex flex-row items-center border-b border-gray-200">
 					<div class="flex flex-col pl-2">
 						<div class="font-bold text-xl flex flex-row items-center">
@@ -41,7 +40,7 @@ const Popular = () => {
 						<div class="text-xs">It's sorted based on likes</div>
 					</div>
 				</div>
-				<div>
+				<div class="pb-20">
 					{filteredJweets.length !== 0 ? (
 						filteredJweets.map((jweet, index) => {
 							return <JweetBox key={jweet.id} jweet={jweet} />;
@@ -60,7 +59,7 @@ const Popular = () => {
 					)}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
