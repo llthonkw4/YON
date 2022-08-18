@@ -240,11 +240,7 @@ const JweetBox = (props) => {
                   handleReplyOpen={handleReplyOpen}
                   handleReplyClose={handleReplyClose}
                 />
-                <RejweetButton
-                  reJweetRef={reJweetRef}
-                  jweet={jweet}
-                  isDetail={false}
-                />
+
                 <LikeButton likeRef={likeRef} jweet={jweet} isDetail={false} />
                 <BookmarkButton
                   bookmarkRef={bookmarkRef}

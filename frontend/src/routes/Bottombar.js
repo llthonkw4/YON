@@ -85,7 +85,7 @@ const BottomBar = () => {
 					</div>
 					<div class="mx-1 w-auto flex flex-row items-center">
 						<Link
-							to={"/profile/jweet/" + currentUser.uid}
+							to={"/profile/yon/" + currentUser.uid}
 							onClick={() => onSelected(5)}
 							class="p-3 rounded-full flex flex-row text-xl mb-4 hover:bg-gray-200 transition delay-50 duration-300"
 						>

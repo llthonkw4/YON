@@ -85,12 +85,8 @@ const Profile = ({ match }) => {
 							</div>
 						</div>
 						<div class="w-full flex flex-col relative">
-							<div class="h-48 w-full ">
-								<img
-									src={info.bgURL ? info.bgURL : bgimg}
-									alt="bgimg"
-									class="w-full h-full object-cover"
-								/>
+							<div class="h-20 w-full ">
+
 							</div>
 							{uid === currentUser.uid ? (
 								<div class="h-16 w-full flex flex-row-reverse items-center pr-4">
@@ -117,22 +113,12 @@ const Profile = ({ match }) => {
 							</div>
 						</div>
 						<div class="w-full flex flex-col pl-4 pr-4 mb-4">
-
-							<div class="flex flex-row">
-								<div class="w-1/2">
-									<h1 class="font-bold text-xl">{info.displayName}</h1>
-									<p class="text-gray-400 mb-2">@{info.email.split("@")[0]}</p>
-								</div>
-								<div class="w-1/2">
-									<p>팔로우</p>
-									<p>팔로잉</p>
-								</div>
-							</div>
-
+							<h1 class="font-bold text-xl">{info.displayName}</h1>
+							<p class="text-gray-400 mb-2">@{info.email.split("@")[0]}</p>
 						</div>
 						<div class="w-full flex flex-row border-t border-gray-200">
 							<MenuButton
-								url={"/profile/jweet/" + uid}
+								url={"/profile/yon/" + uid}
 								onSelected={onSelected}
 								selected={selected}
 								num={1}
