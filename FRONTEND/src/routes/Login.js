@@ -22,14 +22,12 @@ const Login = () => {
 
 	return (
 		<>
-			<div class="h-full w-full flex flex-col lg:flex-row-reverse relative">
+			<div class="h-full w-full flex flex-col lg:flex-row relative place-content-center ">
 				<div class="h-full w-full lg:w-1/2 px-8 py-16 flex flex-col">
 					<div class="w-full h-auto">
-						<div class="h-24">
-							<img src={logo} alt="logo" class="h-full" />
-						</div>
+						
 						<h1 class="text-2xl md:text-6xl font-bold my-6 md:my-12">
-							지금 일어나고 있는 일
+							YON:yes or no
 						</h1>
 						{isLogin && (
 							<LoginContainer
@@ -45,9 +43,11 @@ const Login = () => {
 						)}
 					</div>
 				</div>
+				{/*
 				<div class="h-full w-full lg:w-1/2 ">
 					<img src={background} alt="bg" class="h-full w-full object-cover" />
 				</div>
+						*/}
 				<LoginFormModal
 					isLogin={isLogin}
 					handleClose={handleClose}
