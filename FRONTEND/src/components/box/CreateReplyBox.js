@@ -174,7 +174,7 @@ const CreateReplyBox = ({ id, isModal, handleReplyClose }) => {
 					value={replyText}
 					ref={textareaRef}
 					onChange={onChange}
-					placeholder="Jweet Your reply?"
+					placeholder="Would you like to write a comment??"
 					onInput={handleResizeHeight}
 					onFocus={() => setFocusOn(true)}
 					class={
