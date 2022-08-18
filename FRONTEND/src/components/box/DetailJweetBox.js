@@ -77,7 +77,7 @@ const DetailJweetBox = (props) => {
 					<div class="mt-1 mr-3">
 						<FaRetweet size={16} />
 					</div>
-					<p class="m-0 p-0">{currentUser.displayName} Liked</p>
+					<p class="m-0 p-0">{currentUser.displayName} ReJweeted</p>
 				</div>
 			)}
 			<div class="w-full">
@@ -118,13 +118,10 @@ const DetailJweetBox = (props) => {
 											<HiOutlineDotsHorizontal onClick={toggleFunc} size={28} />
 											{func && (
 												<div class="bg-white border border-gray-200 z-40 absolute flex flex-col top-2 right-2 w-60 rounded-md shadow-xl">
-													<UpdateButton
-														handleOpen={handleUpdateOpen}
-														text={"Update Post"}
-													/>
+
 													<DeleteButton
 														handleOpen={handleDeleteOpen}
-														text={"Delete Post"}
+														text={"Delete Question"}
 													/>
 												</div>
 											)}
