@@ -37,7 +37,7 @@ const CreateJweetModal = ({
 						<CreateJweetBox
 							currentUser={currentUser}
 							isModal={true}
-							handleCreateClose={handleCreateClose}
+							discardThread={discardThread}
 						/>
 					</div>
 				</div>
