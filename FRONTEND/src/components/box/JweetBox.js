@@ -16,6 +16,9 @@ import { FaRetweet } from "react-icons/fa";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import RightButton from "components/button/RightButton";
+import LeftButton from "components/button/LeftButton";
+
 
 const JweetBox = (props) => {
   const history = useHistory();
@@ -94,6 +97,11 @@ const JweetBox = (props) => {
   const reJweetRef = useRef();
   const likeRef = useRef();
   const bookmarkRef = useRef();
+  const leftBtnRef = useRef();
+  const rightBtnRef = useRef();
+  const leftTextRef = useRef();
+  const rightTextRef = useRef();
+  const voteCount = useRef();
 
   const goJweet = (e) => {
     if (
@@ -103,6 +111,11 @@ const JweetBox = (props) => {
       e.target !== reJweetRef.current &&
       e.target !== likeRef.current &&
       e.target !== bookmarkRef.current &&
+      e.target !== leftBtnRef.current &&
+      e.target !== rightBtnRef.current &&
+      e.target !== leftTextRef.current &&
+      e.target !== rightTextRef.current &&
+      e.target !== voteCount.current &&
       e.target.tagName !== "svg" &&
       e.target.tagName !== "path" &&
       e.target.id !== "except" &&
@@ -185,13 +198,9 @@ const JweetBox = (props) => {
                     />
                     {func && (
                       <div class='bg-white border border-gray-200 z-40 absolute flex flex-col top-2 right-2 w-60 rounded-md shadow-xl'>
-                        <UpdateButton
-                          handleOpen={handleUpdateOpen}
-                          text={"Update Jweet"}
-                        />
                         <DeleteButton
                           handleOpen={handleDeleteOpen}
-                          text={"Delete Jweet"}
+                          text={"Delete Question"}
                         />
                       </div>
                     )}
@@ -242,6 +251,8 @@ const JweetBox = (props) => {
                 />
 
                 <LikeButton likeRef={likeRef} jweet={jweet} isDetail={false} />
+                <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isDetail={false} />
+                <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isDetail={false} />
                 <BookmarkButton
                   bookmarkRef={bookmarkRef}
                   jweet={jweet}

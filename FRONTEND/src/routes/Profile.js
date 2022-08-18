@@ -89,12 +89,7 @@ const Profile = ({ match }) => {
 							</div>
 							{uid === currentUser.uid ? (
 								<div class="h-16 w-full flex flex-row-reverse items-center pr-4">
-									<div
-										onClick={updateModalOpen}
-										class="cursor-pointer font-bold text-base border transition delay-50 duration-300 border-gray-300 text-gray-600 rounded-full flex justify-center items-center px-4 py-2 hover:bg-gray-200"
-									>
-										Update Profile
-									</div>
+									
 								</div>
 							) : (
 								<div class="h-16 w-full flex flex-row-reverse items-center pr-4">
@@ -125,40 +120,23 @@ const Profile = ({ match }) => {
 							</div>
 
 						</div>
-						<div class="w-full flex flex-row border-t border-gray-200">
+						<div class="w-full flex flex-row border-t border-gray-200 place-content-center">
 							<MenuButton
 								url={"/profile/yon/" + uid}
 								onSelected={onSelected}
 								selected={selected}
 								num={1}
-								width={"w-1/2"}
+								width={"w-1/2"}	
 								text={"Questions"}
 							/>
-							<MenuButton
-								url={"/profile/like/" + uid}
-								onSelected={onSelected}
-								selected={selected}
-								num={2}
-								width={"w-1/2"}
-								text={"Likes"}
-							/>
+							
 						</div>
-						<Switch>
-							<Route path="/profile/jweet/:id" component={MyJweets} />
-							<Route path="/profile/like/:id" component={LikeJweets} />
-							<Route path="/profile/rejweet/:id" component={ReJweets} />
-						</Switch>
+							<Route path="/profile/yon/:id" component={MyJweets} />
 					</div>
 				</>
 			) : (
 				<LoadingBox />
 			)}
-			<UpdateProfileModal
-				updateModal={updateModal}
-				updateModalOpen={updateModalOpen}
-				updateModalClose={updateModalClose}
-				toggleUpdateState={toggleUpdateState}
-			/>
 		</div>
 	);
 };
