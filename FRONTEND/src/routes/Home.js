@@ -28,7 +28,7 @@ const Home = () => {
 		return () => setLoading(false); // cleanup function을 이용
 	}, []);
 	return (
-		<div class="flex-1 flex flex-col px-64 pt-16">
+		<div class="flex-1 flex flex-col pt-16">
 			<div class="pb-20">
 				{jweets.length !== 0 ? (
 					jweets.map((jweet, index) => {
