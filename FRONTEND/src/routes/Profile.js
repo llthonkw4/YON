@@ -112,9 +112,19 @@ const Profile = ({ match }) => {
 								</div>
 							</div>
 						</div>
+						
 						<div class="w-full flex flex-col pl-4 pr-4 mb-4">
-							<h1 class="font-bold text-xl">{info.displayName}</h1>
-							<p class="text-gray-400 mb-2">@{info.email.split("@")[0]}</p>
+
+							<div class="flex flex-row">
+								<div class="w-1/2">
+									<h1 class="font-bold text-xl">{info.displayName}</h1>
+									<p class="text-gray-400 mb-2">@{info.email.split("@")[0]}</p>
+								</div>
+								<div class="w-1/2">
+									
+								</div>
+							</div>
+
 						</div>
 						<div class="w-full flex flex-row border-t border-gray-200">
 							<MenuButton
