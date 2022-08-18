@@ -5,7 +5,6 @@ import MyJweets from "components/container/MyJweets";
 import ReJweets from "components/container/ReJweets";
 import UpdateProfileModal from "components/modal/UpdateProfileModal";
 import { collection, doc, onSnapshot, query, where } from "firebase/firestore";
-import bgimg from "image/bgimg.jpg";
 import { db } from "mybase";
 import React, { useCallback, useEffect, useState } from "react";
 import { IoArrowBackOutline } from "react-icons/io5";

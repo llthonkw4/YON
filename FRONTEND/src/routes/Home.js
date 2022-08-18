@@ -1,4 +1,4 @@
-import JweetBox from "components/box/JweetBox";
+import YONBoxSlider from "components/box/YONBoxSlider";
 import LoadingBox from "components/box/LoadingBox";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "mybase";
@@ -35,18 +35,18 @@ const Home = () => {
 	}, []);
 	return (
 		<div class="flex flex-row w-full justify-center">
-			<div class="flex flex-col pt-16 max-w-4xl">
+			<div class="flex flex-col pt-16 pb-20 max-w-4xl">
 				<Swiper
-				slidesPerView="1"
-				mousewheel={true}
-				direction="vertical"
-				modules={[Pagination]}
-				pagination={{ clickable: true }}
+					slidesPerView="1"
+					mousewheel={true}
+					direction="vertical"
+					modules={[Pagination]}
+					pagination={{ clickable: true }}
 				>
-					<div class="pb-20">
+					<div>
 						{jweets.length !== 0 ? (
 							jweets.map((jweet, index) => {
-								return <SwiperSlide><JweetBox key={jweet.id} jweet={jweet} id={jweet.id} /></SwiperSlide>;
+								return <SwiperSlide><YONBoxSlider key={jweet.id} jweet={jweet} id={jweet.id} /></SwiperSlide>;
 							})
 						) : loading ? (
 							<div class="w-full flex-1 flex justify-center items-center mt-8">

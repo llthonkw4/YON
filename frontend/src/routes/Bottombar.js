@@ -56,7 +56,7 @@ const BottomBar = () => {
 
 	return (
 		<>
-			<div class="select-none h-66 w-full flex flex-row border-r bg-gray-200 border-gray-200 justify-center fixed bottom-0 dark:text-white z-10">
+			<div class="select-none h-20 w-full flex flex-row border-r bg-gray-200 border-gray-200 justify-center fixed bottom-0 dark:text-white z-10">
 				<div class="flex flex-row justify-between w-4/5 max-w-2xl">
 					{/* 기본 트윗 홈 */}
 					<div class="mx-1 w-auto flex flex-row items-center">
@@ -79,7 +79,7 @@ const BottomBar = () => {
 					</div>
 					<div
 						onClick={handleCreateOpen}
-						class="mt-2 mb-3 mx-1 px-5 rounded-full text-white font-bold bg-black flex justify-center py-3 hover:bg-black transition delay-50 duration-300 cursor-pointer"
+						class="mt-3 mb-4 mx-1 px-5 rounded-full text-white font-bold bg-black flex justify-center py-3 hover:bg-black transition delay-50 duration-300 cursor-pointer"
 					>
 						+
 					</div>
