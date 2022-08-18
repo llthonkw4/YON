@@ -78,7 +78,7 @@ const GithubButton = ({ isLogin }) => {
 		<button
 			name="github"
 			onClick={onGithubLogin}
-			class="cursor-pointer mb-4 border border-gray-300 rounded-full w-full md:w-1/2 flex flex-row h-12 items-center justify-center font-bold"
+			class="cursor-pointer mb-4 border border-gray-300 rounded-full w-full flex flex-row h-12 items-center justify-center font-bold"
 		>
 			<img src={github} class="h-6 object-cover mr-2" alt="github" />{" "}
 			{isLogin ? "Github로 로그인하기" : "Github에서 가입하기"}

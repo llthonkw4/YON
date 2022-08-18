@@ -22,11 +22,10 @@ const Login = () => {
 
 	return (
 		<>
-			<div class="h-full w-full flex flex-col lg:flex-row relative place-content-center ">
+			<div class="h-full w-full flex flex-col lg:flex-row  place-content-center ">
 				<div class="h-full w-full lg:w-1/2 px-8 py-16 flex flex-col">
 					<div class="w-full h-auto">
-						
-						<h1 class="text-2xl md:text-6xl font-bold my-6 md:my-12">
+						<h1 class="text-2xl md:text-6xl font-bold my-6 md:my-12 place-content-center text-center">
 							YON:yes or no
 						</h1>
 						{isLogin && (

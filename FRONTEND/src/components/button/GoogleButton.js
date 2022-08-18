@@ -76,7 +76,7 @@ const GoogleButton = ({ isLogin }) => {
 		<button
 			name="google"
 			onClick={onGoogleLogin}
-			class="cursor-pointer mb-4 border border-gray-300 rounded-full w-full md:w-1/2 flex flex-row h-12 items-center justify-center font-bold"
+			class="cursor-pointer mb-4 border border-gray-300 rounded-full w-full flex flex-row h-12 items-center justify-center font-bold"
 		>
 			<img src={google} class="h-6 object-cover mr-2" alt="google" />
 			{isLogin ? "Google로 로그인하기" : "Google에서 가입하기"}
