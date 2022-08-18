@@ -154,17 +154,12 @@ const DetailJweetBox = (props) => {
 										<span class="text-gray-500 ml-1">Replies</span>
 									</div>
 									<div class="mr-8">
-										<b>{jweet.rejweet ? jweet.rejweet.length : 0} </b>
-										<span class="text-gray-500 ml-1">Rejweets</span>
-									</div>
-									<div class="mr-8">
 										<b>{jweet.like ? jweet.like.length : 0} </b>
 										<span class="text-gray-500 ml-1">Likes</span>
 									</div>
 								</div>
 								<div class="w-full flex flex-row items-center mt-4 ">
 									<ReplyButton jweet={jweet} isDetail={true} />
-									<RejweetButton jweet={jweet} isDetail={true} />
 									<LikeButton jweet={jweet} isDetail={true} />
 									<BookmarkButton jweet={jweet} isDetail={true} />
 								</div>
