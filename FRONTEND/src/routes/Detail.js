@@ -72,7 +72,7 @@ const Detail = ({ match }) => {
 								<IoArrowBackOutline size={24} />
 							</div>
 							<div class="flex flex-col">
-								<div class="font-bold text-xl">Jweet & Replies</div>
+								<div class="font-bold text-xl">Liked & Replies</div>
 							</div>
 						</div>
 						<div>

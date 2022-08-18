@@ -77,7 +77,7 @@ const DetailJweetBox = (props) => {
 					<div class="mt-1 mr-3">
 						<FaRetweet size={16} />
 					</div>
-					<p class="m-0 p-0">{currentUser.displayName} ReJweeted</p>
+					<p class="m-0 p-0">{currentUser.displayName} Liked</p>
 				</div>
 			)}
 			<div class="w-full">
