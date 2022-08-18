@@ -62,11 +62,6 @@ const CreateJweetBox = ({ isModal, discardThread }) => {
 				reply: [],
 				rejweet: [],
 				attachmentUrl,
-				leftBtn: [],
-				rightBtn: [],
-				leftText: "", // todo : init data
-				rightText: "",
-				voteCount: 0,
 			};
 			setJweet("");
 			setAttachment("");
