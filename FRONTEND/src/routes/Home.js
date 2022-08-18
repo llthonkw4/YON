@@ -36,33 +36,27 @@ const Home = () => {
 	return (
 		<div class="flex flex-row w-full justify-center">
 			<div class="flex flex-col pt-16 max-w-4xl">
-
-			<Swiper
-            // install Swiper modules
-            slidesPerView="1"
-            mousewheel={true}
-            direction="vertical"
-            modules={[Pagination]}
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-        >
-      
-
-				<div class="pb-20">
-					{jweets.length !== 0 ? (
-						jweets.map((jweet, index) => {
-							return <SwiperSlide><JweetBox key={jweet.id} jweet={jweet} id={jweet.id} /></SwiperSlide>;
-						})
-					) : loading ? (
-						<div class="w-full flex-1 flex justify-center items-center mt-8">
-							등록된 Jweet이 없습니다.
-						</div>
-					) : (
-						<LoadingBox />
-					)}
-				</div>
+				<Swiper
+				slidesPerView="1"
+				mousewheel={true}
+				direction="vertical"
+				modules={[Pagination]}
+				pagination={{ clickable: true }}
+				>
+					<div class="pb-20">
+						{jweets.length !== 0 ? (
+							jweets.map((jweet, index) => {
+								return <SwiperSlide><JweetBox key={jweet.id} jweet={jweet} id={jweet.id} /></SwiperSlide>;
+							})
+						) : loading ? (
+							<div class="w-full flex-1 flex justify-center items-center mt-8">
+								등록된 Jweet이 없습니다.
+							</div>
+						) : (
+							<LoadingBox />
+						)}
+					</div>
 				</Swiper>
-
 			</div>
 		</div>
 	);
