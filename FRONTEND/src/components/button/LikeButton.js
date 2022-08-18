@@ -48,7 +48,7 @@ const LikeButton = ({ jweet, likeRef, isDetail }) => {
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300 hover:text-red-500 " +
+					"mb-1 w-1/4 flex flex-row items-center transition delay-50 duration-300 hover:text-red-500 " +
 					(like ? "text-red-500 " : "text-gray-400 ") +
 					(isDetail ? "justify-center" : "")
 				}
@@ -63,13 +63,13 @@ const LikeButton = ({ jweet, likeRef, isDetail }) => {
 					}
 				>
 					{like ? (
-						<AiTwotoneHeart size={isDetail ? 25 : 16} />
+						<AiTwotoneHeart size={24} />
 					) : (
-						<AiOutlineHeart size={isDetail ? 25 : 16} />
+						<AiOutlineHeart size={24} />
 					)}
 				</div>
 				{!isDetail && (
-					<p id="except" class="text-sm flex flex-row items-center">
+					<p id="except" class="-ml-1 text-2xl flex flex-row items-center">
 						{jweet.like.length}
 					</p>
 				)}

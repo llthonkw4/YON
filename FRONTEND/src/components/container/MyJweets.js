@@ -1,4 +1,4 @@
-import JweetBox from "components/box/JweetBox";
+import JweetBox from "components/box/YONBox";
 import {
 	collection,
 	onSnapshot,

@@ -1,4 +1,4 @@
-import JweetBox from "components/box/JweetBox";
+import JweetBox from "components/box/YONBox";
 import React from "react";
 
 const ExploreJweets = ({ filteredJweets }) => {

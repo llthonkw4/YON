@@ -118,21 +118,12 @@ const YONBox = (props) => {
   };
 
   return (
-    <div class='w-full h-full select-none z-30 cursor-pointer hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 border-b border-gray-200'>
-      <div onClick={goJweet} class='w-full flex flex-row '>
+    <div class='w-screen h-full select-none z-30 cursor-pointer md:max-w-xl hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 border-b border-gray-200 '>
+      <div onClick={goJweet} class='w-full h-full max-w-xl flex flex-row'>
         <>
           <div class='flex flex-col'>
             {loading ? (
-              <div
-                class={
-                  "h-16 w-16 pb-2 pl-2 pr-2 " +
-                  (props.type !== "explore" ? "pt-4 " : "")
-                }>
-                <Avatar
-                  src={creatorInfo.photoURL}
-                  sx={{ width: 48, height: 48 }}
-                />
-              </div>
+              <div/>
             ) : (
               <div class='h-16 w-16 p-2'>
                 <Skeleton variant='circular'>
@@ -141,18 +132,25 @@ const YONBox = (props) => {
               </div>
             )}
           </div>
-          <div class='w-full flex flex-col pl-2'>
+          <div class='w-full h-full relative'>
             {loading ? (
               <div class='w-full flex flex-row mr-2 justify-between items-center'>
-                <div class='w-full flex flex-row'>
-                  <h1 class='text-base font-bold'>
-                    {creatorInfo.displayName}
-                  </h1>
-                  <p class='text-gray-500 whitespace-pre-wrap break-words'>
-                    @{creatorInfo.email ? creatorInfo.email.split("@")[0] : ""}
-                  </p>
-                  <p class='text-gray-500 mx-1'>∙</p>
-                  <p class='text-gray-500'>{timeToString(jweet.createdAt)}</p>
+                <div class="h-16 w-16 pb-2 pl-2 pr-2 pt-4">
+                  <Avatar
+                    src={creatorInfo.photoURL}
+                    sx={{ width: 48, height: 48 }}
+                  />
+                </div>
+                <div class='w-full flex flex-row justify-start pt-4 pl-2'>
+                  <div class='flex flex-col w-full max-w-xl'>
+                    <h1 class='text-base font-bold -mb-2'>
+                      {creatorInfo.displayName}
+                    </h1>
+                    <p class='text-gray-500 text-sm whitespace-pre-wrap break-words'>
+                      @{creatorInfo.email ? creatorInfo.email.split("@")[0] : ""}
+                    </p>
+                    <p class='text-gray-500 text-xs'>{timeToString(jweet.createdAt)}</p>
+                  </div>
                 </div>
                 <div
                   ref={funcRef}
@@ -190,7 +188,7 @@ const YONBox = (props) => {
             {loading ? (
               <>
                 <div class='break-all w-full h-auto'>
-                  <p class='w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
+                  <p class='ml-3 mt-5 w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
                     {jweet.text}
                   </p>
                 </div>
@@ -213,7 +211,7 @@ const YONBox = (props) => {
             )}
 
             {loading ? (
-              <div id='except' class='w-full flex flex-row items-center mt-4 '>
+              <div id='except' class='absolute bottom-0 w-full flex flex-row items-center mt-4 '>
                 <ReplyButton
                   replyRef={replyRef}
                   jweet={jweet}

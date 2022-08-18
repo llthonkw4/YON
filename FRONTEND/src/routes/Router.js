@@ -47,7 +47,7 @@ const AppRouter = () => {
 		<Router>
 			<div
 				class={
-					"w-full h-full bg-white transition delay-75 duration-300 dark:bg-black " +
+					"w-full h-full transition delay-75 duration-300 dark:bg-black " +
 					(loginToken === "login" && currentUser
 						? "flex flex-row"
 						: "")
@@ -63,7 +63,7 @@ const AppRouter = () => {
 
 							<Route exact path="/popular" component={Popular} />
 							<Route exact path="/home" component={Home} />
-							<Route exact path="/jweet/:id" component={Detail} />
+							<Route exact path="/yon/:id" component={Detail} />
 							<Route path="/profile/:type/:id" component={Profile} />
 							<Redirect from="*" to="/" />
 						</>
