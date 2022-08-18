@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/YON/static/css/main.2ef5983b.chunk.css",
+    "main.js": "/YON/static/js/main.5d27b52c.chunk.js",
+    "main.js.map": "/YON/static/js/main.5d27b52c.chunk.js.map",
+    "runtime-main.js": "/YON/static/js/runtime-main.4af4cb7e.js",
+    "runtime-main.js.map": "/YON/static/js/runtime-main.4af4cb7e.js.map",
+    "static/js/2.07ed6be0.chunk.js": "/YON/static/js/2.07ed6be0.chunk.js",
+    "static/js/2.07ed6be0.chunk.js.map": "/YON/static/js/2.07ed6be0.chunk.js.map",
+    "index.html": "/YON/index.html",
+    "static/css/main.2ef5983b.chunk.css.map": "/YON/static/css/main.2ef5983b.chunk.css.map",
+    "static/js/2.07ed6be0.chunk.js.LICENSE.txt": "/YON/static/js/2.07ed6be0.chunk.js.LICENSE.txt",
+    "static/media/background.294149b7.jpg": "/YON/static/media/background.294149b7.jpg",
+    "static/media/bgimg.b52d269e.jpg": "/YON/static/media/bgimg.b52d269e.jpg",
+    "static/media/logo.5c22847b.png": "/YON/static/media/logo.5c22847b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4af4cb7e.js",
+    "static/js/2.07ed6be0.chunk.js",
+    "static/css/main.2ef5983b.chunk.css",
+    "static/js/main.5d27b52c.chunk.js"
+  ]
+}
