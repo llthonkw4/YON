@@ -4,6 +4,16 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "mybase";
 import React, { useEffect, useState } from "react";
 
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
+import 'swiper/components/navigation/navigation.min.css'
+import 'swiper/components/pagination/pagination.min.css'
+
+
+
 const Home = () => {
 	const [loading, setLoading] = useState(false);
 	const [jweets, setJweets] = useState([]);
@@ -26,10 +36,22 @@ const Home = () => {
 	return (
 		<div class="flex flex-row w-full justify-center">
 			<div class="flex flex-col pt-16 max-w-4xl">
+
+			<Swiper
+            // install Swiper modules
+            slidesPerView="1"
+            mousewheel={true}
+            direction="vertical"
+            modules={[Pagination]}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+        >
+      
+
 				<div class="pb-20">
 					{jweets.length !== 0 ? (
 						jweets.map((jweet, index) => {
-							return <JweetBox key={jweet.id} jweet={jweet} id={jweet.id} />;
+							return <SwiperSlide><JweetBox key={jweet.id} jweet={jweet} id={jweet.id} /></SwiperSlide>;
 						})
 					) : loading ? (
 						<div class="w-full flex-1 flex justify-center items-center mt-8">
@@ -39,6 +61,8 @@ const Home = () => {
 						<LoadingBox />
 					)}
 				</div>
+				</Swiper>
+
 			</div>
 		</div>
 	);
