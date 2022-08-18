@@ -88,7 +88,7 @@ const RejweetButton = ({ jweet, reJweetRef, isDetail }) => {
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300  hover:text-green-500 " +
+					"mb-1 w-1/4 flex flex-row items-center transition delay-50 duration-300  hover:text-green-500 " +
 					(rejweet ? "text-green-500 " : "text-gray-400 ") +
 					(isDetail ? "justify-center " : "")
 				}
@@ -102,10 +102,10 @@ const RejweetButton = ({ jweet, reJweetRef, isDetail }) => {
 						(isDetail ? "" : "mt-1 mr-1")
 					}
 				>
-					<AiOutlineRetweet size={isDetail ? 25 : 16} />
+					<AiOutlineRetweet size={24} />
 				</div>
 				{!isDetail && (
-					<p id="except" class="text-sm flex flex-row items-center">
+					<p id="except" class="-ml-1 text-2xl flex flex-row items-center">
 						{jweet.rejweet ? jweet.rejweet.length : 0}
 					</p>
 				)}

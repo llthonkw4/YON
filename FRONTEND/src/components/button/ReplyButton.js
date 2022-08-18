@@ -26,10 +26,10 @@ const ReplyButton = ({
 						(isDetail ? "mt-1 mr-1 " : "cursor-pointer")
 					}
 				>
-					<BsChat size={isDetail ? 24 : 16} />
+					<BsChat size={24} />
 				</div>
 				{!isDetail && (
-					<p id="except" class="text-sm flex flex-row items-center">
+					<p id="except" class="mb-1 text-2xl flex flex-row items-center">
 						{jweet.reply.length}
 					</p>
 				)}

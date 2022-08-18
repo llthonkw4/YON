@@ -68,7 +68,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isDetail }) => {
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300 text-gray-400 hover:text-blue-500 " +
+					"mb-1 w-1/4 flex flex-row-reverse transition delay-50 duration-300 text-gray-400 hover:text-blue-500 " +
 					(bookmark ? "text-blue-500 " : " ") +
 					(isDetail ? "justify-center " : "")
 				}
@@ -83,9 +83,9 @@ const BookmarkButton = ({ jweet, bookmarkRef, isDetail }) => {
 					}
 				>
 					{bookmark ? (
-						<MdBookmark size={isDetail ? 27 : 16} />
+						<MdBookmark size={24} />
 					) : (
-						<MdBookmarkBorder size={isDetail ? 27 : 16} />
+						<MdBookmarkBorder size={24} />
 					)}
 				</div>
 			</div>

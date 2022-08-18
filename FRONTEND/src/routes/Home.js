@@ -4,7 +4,7 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "mybase";
 import React, { useEffect, useState } from "react";
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/swiper-bundle.min.css'
@@ -35,7 +35,7 @@ const Home = () => {
 	}, []);
 	return (
 		<div class="flex flex-row w-full justify-center">
-			<div class="flex flex-col pt-16 pb-20 max-w-4xl">
+			<div class="h-full flex flex-col pt-16 pb-20 w-full">
 				<Swiper
 					slidesPerView="1"
 					mousewheel={true}

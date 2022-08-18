@@ -1,5 +1,5 @@
 import LoadingBox from "components/box/LoadingBox";
-import JweetBox from "components/box/JweetBox";
+import JweetBox from "components/box/YONBox";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "mybase";
 import React, { useEffect, useState } from "react";

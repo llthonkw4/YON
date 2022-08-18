@@ -1,6 +1,6 @@
 import LoadingBox from "components/box/LoadingBox";
 
-import JweetBox from "components/box/JweetBox";
+import JweetBox from "components/box/YONBox";
 import {
 	collection,
 	doc,

@@ -60,10 +60,10 @@ const Detail = ({ match }) => {
 	}, [getJweet, getReplies]);
 
 	return (
-		<>
+		<div class="flex flex-row w-full justify-center">
+			<div class="h-full flex flex-col pt-16 w-full max-w-xl">
 			{loading ? (
-				<>
-					<div class="flex-1 flex flex-col pt-16">
+					<div class="flex-1 flex flex-col">
 						<div class="w-full px-2 py-2 flex flex-row items-center border-b border-gray-200">
 							<div
 								onClick={() => history.goBack()}
@@ -94,11 +94,11 @@ const Detail = ({ match }) => {
 							})}
 						</div>
 					</div>
-				</>
 			) : (
 				<LoadingBox />
 			)}
-		</>
+			</div>
+		</div>
 	);
 };
 
