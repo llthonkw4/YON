@@ -10,7 +10,7 @@ import { MdCancel } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
-const CreateJweetBox = ({ isModal, handleJweetClose }) => {
+const CreateJweetBox = ({ isModal, discardThread }) => {
 	const currentUser = useSelector((state) => state.user.currentUser);
 
 	const [jweet, setJweet] = useState("");
@@ -67,7 +67,7 @@ const CreateJweetBox = ({ isModal, handleJweetClose }) => {
 			setAttachment("");
 			textareaRef.current.style.height = "40px";
 			if (isModal) {
-				handleJweetClose();
+				discardThread();
 			}
 			try {
 				await addDoc(collection(db, "jweets"), _jweet);
