@@ -47,6 +47,7 @@ const Home = () => {
 						{jweets.length !== 0 ? (
 							jweets.map((jweet, index) => {
 								return <SwiperSlide><YONBoxSlider key={jweet.id} jweet={jweet} id={jweet.id} /></SwiperSlide>;
+
 							})
 						) : loading ? (
 							<div class="w-full flex-1 flex justify-center items-center mt-8">

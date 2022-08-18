@@ -143,17 +143,8 @@ const UpdateProfileModal = ({
 							</div>
 						</div>
 						<div class="w-full flex flex-col relative">
-							<div class="relative h-36 w-full bg-purple-100">
-								<img src={bg} alt="bgimg" class="w-full h-full object-cover" />
-								<div
-									onClick={() => bgRef.current.click()}
-									class="cursor-pointer absolute p-1 top-0 w-full h-full object-cover"
-								>
-									<div class="w-full h-full object-cover opacity-20 bg-black flex justify-center items-center"></div>
-									<div class="w-full h-full absolute top-0 left-0 flex justify-center text-white items-center opacity-70">
-										<MdCameraEnhance size={24} />
-									</div>
-								</div>
+							<div class="relative h-20 w-full">
+								
 							</div>
 							<div class="h-16 w-full flex flex-row-reverse items-center pr-4">
 								<div class="cursor-pointer font-bold text-base flex justify-center items-center px-4 py-2"></div>
