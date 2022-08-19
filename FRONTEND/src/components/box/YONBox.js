@@ -16,6 +16,9 @@ import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
+import RightButton from "components/button/RightButton";
+import LeftButton from "components/button/LeftButton";
+
 const YONBox = (props) => {
   const history = useHistory();
   const jweet = props.jweet;
@@ -92,6 +95,11 @@ const YONBox = (props) => {
   const reJweetRef = useRef();
   const likeRef = useRef();
   const bookmarkRef = useRef();
+  const leftBtnRef = useRef();
+  const rightBtnRef = useRef();
+  const leftTextRef = useRef();
+  const rightTextRef = useRef();
+  const voteCount = useRef();
 
   const goJweet = (e) => {
     if (
@@ -101,6 +109,11 @@ const YONBox = (props) => {
       e.target !== reJweetRef.current &&
       e.target !== likeRef.current &&
       e.target !== bookmarkRef.current &&
+      e.target !== leftBtnRef.current &&
+      e.target !== rightBtnRef.current &&
+      e.target !== leftTextRef.current &&
+      e.target !== rightTextRef.current &&
+      e.target !== voteCount.current &&
       e.target.tagName !== "svg" &&
       e.target.tagName !== "path" &&
       e.target.id !== "except" &&
@@ -228,6 +241,8 @@ const YONBox = (props) => {
                   isDetail={false}
                 />
                 <LikeButton likeRef={likeRef} jweet={jweet} isDetail={false} />
+                <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isDetail={false} />
+                <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isDetail={false} />
                 <BookmarkButton
                   bookmarkRef={bookmarkRef}
                   jweet={jweet}
