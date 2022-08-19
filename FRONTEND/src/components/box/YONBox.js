@@ -47,7 +47,7 @@ const YONBox = (props) => {
     setDeleteOpen(false);
   };
   useEffect(() => {
-    //console.log(jweet);
+    console.log(jweet);
     return () => setLoading(false);
   }, []);
   useEffect(() => {
@@ -191,11 +191,11 @@ const YONBox = (props) => {
                     <div class='bg-white border border-gray-200 z-40 absolute flex flex-col top-2 right-2 w-60 rounded-md shadow-xl'>
                       <UpdateButton
                         handleOpen={handleUpdateOpen}
-                        text={"Update Post"}
+                        text={"Update Yon"}
                       />
                       <DeleteButton
                         handleOpen={handleDeleteOpen}
-                        text={"Delete Post"}
+                        text={"Delete Yon"}
                       />
                     </div>
                   )}
@@ -209,7 +209,7 @@ const YONBox = (props) => {
             {loading ? (
               <>
                 <div style={divStyle} class='break-all w-full h-auto'>
-                  <p class='w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
+                  <p class='w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words text-center'>
                     {jweet.text}
                   </p>
                 </div>
