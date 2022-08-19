@@ -3,7 +3,6 @@ import Skeleton from "@mui/material/Skeleton";
 import BookmarkButton from "components/button/BookmarkButton";
 import DeleteButton from "components/button/DeleteButton";
 import LikeButton from "components/button/LikeButton";
-import RejweetButton from "components/button/RejweetButton";
 import ReplyButton from "components/button/ReplyButton";
 import UpdateButton from "components/button/UpdateButton";
 import DeleteJweetModal from "components/modal/DeleteJweetModal";
@@ -233,7 +232,7 @@ const YONBox = (props) => {
                 <div id='except' class='flex flex-col w-full'>
                   <div id='except' class='flex flex-row-reverse w-full'>
                     <div id='except' class='flex flex-col'>
-                      <LikeButton likeRef={likeRef} jweet={jweet} isMain={true} />
+                      <BookmarkButton likeRef={likeRef} jweet={jweet} isMain={true} />
                       <ReplyButton
                         replyRef={replyRef}
                         jweet={jweet}

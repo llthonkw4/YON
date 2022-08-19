@@ -14,7 +14,7 @@ const ReplyButton = ({
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300 text-black hover:text-purple-500 "
+					"w-1/4 flex flex-row items-center transition delay-50 duration-300 text-black hover:text-purple-500 pr-10"
 				}
 			>
 				<div
@@ -30,7 +30,7 @@ const ReplyButton = ({
 					<p id="except" class={"mb-1 flex flex-row items-center" +
 						(isMain ? "text-2xl" : "")}
 					>
-						{jweet.reply.length}
+
 					</p>
 				)}
 			</div>
