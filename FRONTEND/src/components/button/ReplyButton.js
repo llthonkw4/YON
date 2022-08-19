@@ -24,7 +24,7 @@ const ReplyButton = ({
 						"flex flex-row rounded-full transition delay-50 duration-300 hover:bg-purple-100 p-2 cursor-pointer"
 					}
 				>
-					<BsChat size={isMain? 24 : 20} />
+					<BsChat size={isMain? 40 : 20} />
 				</div>
 			</div>
 			<CreateReplyModal
