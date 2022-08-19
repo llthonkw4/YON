@@ -37,7 +37,7 @@ const Popular = () => {
 						<div class="font-bold text-xl flex flex-row items-center">
 							<HiFire class="text-red-500 mr-1" /> Popular
 						</div>
-						<div class="text-xs">It's sorted based on likes</div>
+						<div class="text-xs">It's sorted based on YoN</div>
 					</div>
 				</div>
 				<div class="pb-20">
@@ -48,7 +48,7 @@ const Popular = () => {
 					) : loading ? (
 						<div class="w-full flex flex-col justify-center items-center mt-8">
 							<div class="w-2/3 font-bold text-2xl">
-								You haven’t added any YON to your Bookmarks yet
+								You haven’t added any YoN to your Likes yet
 							</div>
 							<div class="w-2/3 text-gray-500">
 								When you do, they’ll show up here.

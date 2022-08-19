@@ -69,8 +69,8 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 			<div
 				id="except"
 				class={
-					"mb-1 w-1/4 flex flex-row-reverse transition delay-50 duration-300 text-gray-400 hover:text-blue-500 " +
-					(bookmark ? "text-blue-500 " : " ") +
+					"mb-1 w-1/4 flex flex-row-reverse transition delay-50 duration-300 text-red-400 hover:text-red-500 " +
+					(bookmark ? "text-red-500 " : " ") +
 					(isMain ? "justify-center " : "")
 				}
 			>
@@ -84,9 +84,9 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 					}
 				>
 					{bookmark ? (
-						<MdBookmark size={24} />
+						<AiOutlineHeart size={24} />
 					) : (
-						<MdBookmarkBorder size={24} />
+						<AiTwotoneHeart  size={24} />
 					)}
 				</div>
 			</div>
@@ -102,7 +102,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 					variant="filled"
 					sx={{ width: "100%" }}
 				>
-					{bookmark ? "북마크 저장" : "북마크 취소"}
+					{bookmark ? "좋아요" : "좋아요 취소"}
 				</Alert>
 			</Snackbar>
 		</>
