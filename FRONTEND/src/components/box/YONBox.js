@@ -162,8 +162,8 @@ const YONBox = (props) => {
           </div>
           <div class='w-full flex flex-col pl-2'>
             {loading ? (
-              <div class='w-full flex flex-row mr-2 justify-start items-center'>
-                <div class='w-full flex flex-col'>
+              <div class='w-full flex flex-row mr-2 justify-between items-center'>
+                <div class='w-2/3 flex flex-col'>
                   <h1 class='text-base font-bold'>
                     {creatorInfo.displayName}
                   </h1>
@@ -173,13 +173,8 @@ const YONBox = (props) => {
                   
                   <p class='text-gray-500'>{timeToString(jweet.createdAt)}</p>
                 </div>
-                <div calss = 'flex flex-row justify-content'>
-                 <BookmarkButton
-                  bookmarkRef={bookmarkRef}
-                  jweet={jweet}
-                  isMain={false}
-                  />
-                  <ReplyButton
+                <div class = 'flex flex-row-reverse w-full items-center'>
+                <ReplyButton
                     replyRef={replyRef}
                     jweet={jweet}
                     isMain={false}
@@ -187,7 +182,13 @@ const YONBox = (props) => {
                     handleReplyOpen={handleReplyOpen}
                     handleReplyClose={handleReplyClose}
                   />
-                </div>
+                 <BookmarkButton
+                  bookmarkRef={bookmarkRef}
+                  jweet={jweet}
+                  isMain={false}
+                  />
+                  </div>
+                  
                 <div
                   ref={funcRef}
                   id='except'

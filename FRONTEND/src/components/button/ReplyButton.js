@@ -14,7 +14,7 @@ const ReplyButton = ({
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300 text-black hover:text-purple-500"
+					"flex flex-row items-center transition delay-50 duration-300 text-black hover:text-purple-500"
 				}
 			>
 				<div
@@ -24,15 +24,8 @@ const ReplyButton = ({
 						"rounded-full transition delay-50 duration-300 hover:bg-purple-100 p-2 cursor-pointer"
 					}
 				>
-					<BsChat size={isMain? 36 : 16} />
+					<BsChat size={isMain? 36 : 20} />
 				</div>
-				{!isMain && (
-					<p id="except" class={"mb-1 flex flex-row items-center" +
-						(isMain ? "text-2xl" : "")}
-					>
-
-					</p>
-				)}
 			</div>
 			<CreateReplyModal
 				jweet={jweet}
