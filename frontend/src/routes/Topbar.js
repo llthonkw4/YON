@@ -7,7 +7,7 @@ import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 
-const TopBar = ({ selectedBar, setSelectedBar }) => {
+const TopBar = ( {selectedBar, setSelectedBar} ) => {
 	const location = useLocation();
 	const [selected, setSelected] = useState(1);
 	const [profile, setProfile] = useState(false);

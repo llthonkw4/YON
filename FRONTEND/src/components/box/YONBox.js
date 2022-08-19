@@ -101,7 +101,7 @@ const YONBox = (props) => {
   const voteCount = useRef();
   const divStyle={
     overflowY: 'scroll',
-    width: '100%',
+    width: 'auto',
     float: 'left',
     height:'auto',
     position:'relative'
@@ -248,15 +248,25 @@ const YONBox = (props) => {
             )}
 
             {loading ? (
-              <div id='except' class='w-full flex flex-row items-center mt-4 '>
-                <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={false} />
-                <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={false} />
-              </div>
-            ) : (
-              <Skeleton width='100%'>
-                <div class='w-full h-12  resize-none outline-none cursor-pointer bg-transparent whitespace-pre	'></div>
-              </Skeleton>
-            )}
+                <div class='flex flex-row w-fulls'>
+                  <div class='w-1/3 bg-transparent'>
+                    <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={true} />
+                  </div>
+                  <div class='w-1/3 font-bold text-4xl'>
+                    {jweet.leftBtn.length} vs {jweet.rightBtn.length}
+                  </div>
+                  <div class='w-1/3 bg-transparent'>
+                    <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={true} />
+                  </div>
+                </div>
+              )
+              :
+               (
+                <Skeleton width='100%'>
+                  <div class='w-full h-12  resize-none outline-none cursor-pointer bg-transparent whitespace-pre	'></div>
+                </Skeleton>
+              )
+            }
           </div>
 
           <UpdateJweetModal
