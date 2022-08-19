@@ -61,7 +61,7 @@ const LeftButton = ({ jweet, leftBtnRef, isMain }) => {
 					onClick={toggleLeftBtn}
 					ref={leftBtnRef}
 					class={
-						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 "
+						"flex flex-row w-full cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 "
 					}
 				>
 					{leftBtn ? (
@@ -69,10 +69,10 @@ const LeftButton = ({ jweet, leftBtnRef, isMain }) => {
 					) : (
 						<AiOutlineArrowLeft size={36} />
 					)}
-				</div>
 					<p id="except" class="text-sm flex flex-row items-center">
 						{jweet.leftBtn.length}
 					</p>
+				</div>
 			</div>
 			<Snackbar open={leftBtnSnack} autoHideDuration={2000} onClose={leftBtnClose}>
 				<Alert

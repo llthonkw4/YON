@@ -18,7 +18,7 @@ const Popular = () => {
 					...doc.data(),
 				}));
 				await myJweetArray.sort(function (a, b) {
-					return b.like.length - a.like.length;
+					return b.voteCount - a.voteCount;
 				});
 				setFilteredJweets(myJweetArray);
 				setLoading(true);

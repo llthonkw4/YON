@@ -46,7 +46,7 @@ const YONBox = (props) => {
     setDeleteOpen(false);
   };
   useEffect(() => {
-    console.log(jweet);
+    //console.log(jweet);
     return () => setLoading(false);
   }, []);
   useEffect(() => {
@@ -100,9 +100,10 @@ const YONBox = (props) => {
   const voteCount = useRef();
   const divStyle={
     overflowY: 'scroll',
+    overflowX: 'hidden', 
     width: '100%',
     float: 'left',
-    height:'auto',
+    height:'80%',
     position:'relative'
   };
   const goJweet = (e) => {
@@ -135,7 +136,7 @@ const YONBox = (props) => {
   };
 
   return (
-    <div class='w-screen h-full select-none z-30 cursor-pointer md:max-w-xl hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 border-b border-gray-200 '>
+    <div class='w-screen h-full select-none z-30 cursor-pointer max-w-xl hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 border-b border-gray-200 '>
       <div onClick={goJweet} class='w-full h-full max-w-xl flex flex-row'>
         <>
           <div class='flex flex-col'>
@@ -244,10 +245,10 @@ const YONBox = (props) => {
                   </div>
                   </div>
                   <div id='except' class='flex flex-row justify-between w-full'>
-                    <div class='w-1/2 bg-white'>
+                    <div class='w-1/2 bg-transparency'>
                     <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={true} />
                     </div>
-                    <div class='w-1/2 bg-white flex flex-row-reverse'>
+                    <div class='w-1/2 bg-transparency'>
                     <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={true} />
                     </div>
                   </div>
