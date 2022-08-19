@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/YON/static/css/main.65783bf1.css",
-    "main.js": "/YON/static/js/main.794c7a2c.js",
+    "main.css": "/YON/static/css/main.c1c8df8a.css",
+    "main.js": "/YON/static/js/main.48ffb956.js",
     "static/media/background.jpg": "/YON/static/media/background.294149b7f7e46ca5b281.jpg",
     "static/media/bgimg.jpg": "/YON/static/media/bgimg.b52d269e5b95877bac40.jpg",
     "static/media/logo.png": "/YON/static/media/logo.5c22847bc34d3847cb17.png",
     "index.html": "/YON/index.html",
-    "main.65783bf1.css.map": "/YON/static/css/main.65783bf1.css.map",
-    "main.794c7a2c.js.map": "/YON/static/js/main.794c7a2c.js.map"
+    "main.c1c8df8a.css.map": "/YON/static/css/main.c1c8df8a.css.map",
+    "main.48ffb956.js.map": "/YON/static/js/main.48ffb956.js.map"
   },
   "entrypoints": [
-    "static/css/main.65783bf1.css",
-    "static/js/main.794c7a2c.js"
+    "static/css/main.c1c8df8a.css",
+    "static/js/main.48ffb956.js"
   ]
 }
