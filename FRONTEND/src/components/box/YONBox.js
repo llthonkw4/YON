@@ -101,7 +101,7 @@ const YONBox = (props) => {
   const voteCount = useRef();
   const divStyle={
     overflowY: 'scroll',
-    width: '100%',
+    width: 'auto',
     float: 'left',
     height:'auto',
     position:'relative'
@@ -164,7 +164,7 @@ const YONBox = (props) => {
             {loading ? (
               <div class='w-full flex flex-row mr-2 justify-start items-center text-xs'>
                 <div class='w-full flex flex-col'>
-                  <h1 class='text-base font-bold text-sm'>
+                  <h1 class='text-base font-bold'>
                     {creatorInfo.displayName}
                   </h1>
                   <p class='text-gray-500 whitespace-pre-wrap break-words'>

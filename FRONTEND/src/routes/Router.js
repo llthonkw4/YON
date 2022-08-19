@@ -54,7 +54,7 @@ const AppRouter = () => {
 						: "")
 				}
 			>
-				{loginToken === "login" && currentUser && <TopBar selectedBar={selectedBar} setSelectedBar={setSelectedBar}/>}
+				{loginToken === "login" && currentUser && <TopBar selectedBar = {selectedBar} setSelectedBar = {setSelectedBar} />}
 				<Switch>
 					{loginToken === "login" && currentUser ? (
 						<>
@@ -75,7 +75,7 @@ const AppRouter = () => {
 						</>
 					)}
 				</Switch>
-				{loginToken === "login" && currentUser && <BottomBar selectedBar={selectedBar} setSelectedBar={setSelectedBar}/>}
+				{loginToken === "login" && currentUser && <BottomBar selectedBar = {selectedBar} setSelectedBar = {setSelectedBar} />}
 			</div>
 		</Router>
 	);
