@@ -123,8 +123,8 @@ const YONBox = (props) => {
       e.target.tagName !== "svg" &&
       e.target.tagName !== "path" &&
       e.target.id !== "except" &&
-      e.target.innerText !== "Update Jweet" &&
-      e.target.innerText !== "Delete Jweet" &&
+      e.target.innerText !== "Modify YoN" &&
+      e.target.innerText !== "Delete YoN" &&
       !e.target.className.includes("MuiBackdrop") &&
       !photoOpen &&
       !updateOpen &&
