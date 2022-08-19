@@ -152,9 +152,9 @@ const DetailJweetBox = (props) => {
 										/>
 									</div>
 								)}
-								<div class="w-full flex flex-row items-center mt-4 ">
-									<LikeButton jweet={jweet} isMain={false} />
+								<div class="w-full flex flex-row-reverse items-center mt-4 ">
 									<ReplyButton jweet={jweet} isMain={false} />
+									<BookmarkButton jweet={jweet} isMain={false} />
 								</div>
 								<div class='flex flex-column'>
 									<LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={false}/>
