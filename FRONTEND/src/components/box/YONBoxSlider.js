@@ -210,7 +210,6 @@ const YONBox = (props) => {
                   <p class='ml-3 mt-5 w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
                     {jweet.text}
                   </p>
-                </div>
                 {jweet.attachmentUrl !== "" && (
                   <div class='w-full mt-4 mb-2 pr-4 '>
                     <img
@@ -222,6 +221,7 @@ const YONBox = (props) => {
                     />
                   </div>
                 )}
+                </div>
               </>
             ) : (
               <Skeleton width='100%'>
