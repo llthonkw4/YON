@@ -10,7 +10,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const RejweetButton = ({ jweet, reJweetRef, isDetail }) => {
+const RejweetButton = ({ jweet, reJweetRef, isMain }) => {
 	const dispatch = useDispatch();
 	const currentUser = useSelector((state) => state.user.currentUser);
 	const [rejweet, setRejweet] = useState(false);
@@ -90,7 +90,7 @@ const RejweetButton = ({ jweet, reJweetRef, isDetail }) => {
 				class={
 					"mb-1 w-1/4 flex flex-row items-center transition delay-50 duration-300  hover:text-green-500 " +
 					(rejweet ? "text-green-500 " : "text-gray-400 ") +
-					(isDetail ? "justify-center " : "")
+					(isMain ? "justify-center " : "")
 				}
 			>
 				<div
@@ -99,12 +99,12 @@ const RejweetButton = ({ jweet, reJweetRef, isDetail }) => {
 					id="except"
 					class={
 						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-green-100 p-2 " +
-						(isDetail ? "" : "mt-1 mr-1")
+						(isMain ? "" : "mt-1 mr-1")
 					}
 				>
 					<AiOutlineRetweet size={24} />
 				</div>
-				{!isDetail && (
+				{!isMain && (
 					<p id="except" class="-ml-1 text-2xl flex flex-row items-center">
 						{jweet.rejweet ? jweet.rejweet.length : 0}
 					</p>

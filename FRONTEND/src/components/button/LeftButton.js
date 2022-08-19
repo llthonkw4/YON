@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-const LeftButton = ({ jweet, leftBtnRef, isDetail }) => {
+const LeftButton = ({ jweet, leftBtnRef, isMain }) => {
 	const currentUser = useSelector((state) => state.user.currentUser);
 	const [leftBtn, setLeftBtn] = useState(false);
 	const [leftBtnSnack, setLeftBtnSnack] = useState();
@@ -52,9 +52,8 @@ const LeftButton = ({ jweet, leftBtnRef, isDetail }) => {
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300 hover:text-red-500 " +
-					(leftBtn ? "text-red-500 " : "text-gray-400 ") +
-					(isDetail ? "justify-center" : "")
+					"w-full flex flex-row items-center transition delay-50 duration-300 hover:text-red-500 " +
+					(leftBtn ? "text-red-500 " : "text-black")
 				}
 			>
 				<div
@@ -62,21 +61,18 @@ const LeftButton = ({ jweet, leftBtnRef, isDetail }) => {
 					onClick={toggleLeftBtn}
 					ref={leftBtnRef}
 					class={
-						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 " +
-						(isDetail ? " " : "mt-1 mr-1 ")
+						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 "
 					}
 				>
 					{leftBtn ? (
-						<AiOutlineArrowLeft size={isDetail ? 25 : 16} />
+						<AiOutlineArrowLeft size={36} />
 					) : (
-						<AiOutlineArrowLeft size={isDetail ? 25 : 16} />
+						<AiOutlineArrowLeft size={36} />
 					)}
 				</div>
-				{!isDetail && (
 					<p id="except" class="text-sm flex flex-row items-center">
 						{jweet.leftBtn.length}
 					</p>
-				)}
 			</div>
 			<Snackbar open={leftBtnSnack} autoHideDuration={2000} onClose={leftBtnClose}>
 				<Alert
@@ -86,7 +82,7 @@ const LeftButton = ({ jweet, leftBtnRef, isDetail }) => {
 					variant="filled"
 					sx={{ width: "100%" }}
 				>
-					{leftBtn ? "좋아요!" : "좋아요 취소!"}
+					{leftBtn ? "투표 완료!" : "투표 취소!"}
 				</Alert>
 			</Snackbar>
 		</>

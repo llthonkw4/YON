@@ -1,9 +1,11 @@
 import LoadingBox from "components/box/LoadingBox";
 import BookmarkButton from "components/button/BookmarkButton";
 import DeleteButton from "components/button/DeleteButton";
+import LeftButton from "components/button/LeftButton";
 import LikeButton from "components/button/LikeButton";
 import RejweetButton from "components/button/RejweetButton";
 import ReplyButton from "components/button/ReplyButton";
+import RightButton from "components/button/RightButton";
 import UpdateButton from "components/button/UpdateButton";
 import DeleteJweetModal from "components/modal/DeleteJweetModal";
 import ImageModal from "components/modal/ImageModal";
@@ -17,6 +19,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const DetailJweetBox = (props) => {
+	const leftBtnRef = useRef();
+	const rightBtnRef = useRef();
 	const jweet = props.jweet;
 	const [loading, setLoading] = useState(false);
 	const currentUser = useSelector((state) => state.user.currentUser);
@@ -159,9 +163,10 @@ const DetailJweetBox = (props) => {
 									</div>
 								</div>
 								<div class="w-full flex flex-row items-center mt-4 ">
-									<ReplyButton jweet={jweet} isDetail={true} />
-									<LikeButton jweet={jweet} isDetail={true} />
-									<BookmarkButton jweet={jweet} isDetail={true} />
+									<LikeButton jweet={jweet} isMain={false} />
+									<ReplyButton jweet={jweet} isMain={false} />
+									<LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={false}/>
+									<RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={false}/>
 								</div>
 							</div>
 						</>

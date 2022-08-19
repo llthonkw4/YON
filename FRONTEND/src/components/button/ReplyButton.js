@@ -4,7 +4,7 @@ import { BsChat } from "react-icons/bs";
 
 const ReplyButton = ({
 	jweet,
-	isDetail,
+	isMain,
 	handleReplyOpen,
 	replyOpen,
 	handleReplyClose,
@@ -14,22 +14,22 @@ const ReplyButton = ({
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300 text-gray-400 hover:text-purple-500 " +
-					(isDetail ? "justify-center" : "")
+					"w-1/4 flex flex-row items-center transition delay-50 duration-300 text-black hover:text-purple-500 "
 				}
 			>
 				<div
 					onClick={handleReplyOpen}
 					id="except"
 					class={
-						"rounded-full transition delay-50 duration-300 hover:bg-purple-100 p-2 " +
-						(isDetail ? "mt-1 mr-1 " : "cursor-pointer")
+						"rounded-full transition delay-50 duration-300 hover:bg-purple-100 p-2 cursor-pointer"
 					}
 				>
-					<BsChat size={24} />
+					<BsChat size={isMain? 36 : 16} />
 				</div>
-				{!isDetail && (
-					<p id="except" class="mb-1 text-2xl flex flex-row items-center">
+				{!isMain && (
+					<p id="except" class={"mb-1 flex flex-row items-center" +
+						(isMain ? "text-2xl" : "")}
+					>
 						{jweet.reply.length}
 					</p>
 				)}

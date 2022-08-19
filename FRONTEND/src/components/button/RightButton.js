@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-const RightButton = ({ jweet, rightBtnRef, isDetail }) => {
+const RightButton = ({ jweet, rightBtnRef, isMain }) => {
 	const currentUser = useSelector((state) => state.user.currentUser);
 	const [rightBtn, setRightBtn] = useState(false);
 	const [rightBtnSnack, setRightBtnSnack] = useState();
@@ -54,31 +54,28 @@ const RightButton = ({ jweet, rightBtnRef, isDetail }) => {
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300 hover:text-red-500 " +
-					(rightBtn ? "text-red-500 " : "text-gray-400 ") +
-					(isDetail ? "justify-center" : "")
+					"flex flex-row items-center transition delay-50 duration-300 hover:text-red-500 " +
+					(rightBtn ? "text-red-500 " : "text-black")
 				}
 			>
+			<p id="except" class="text-sm flex flex-row items-center">
+					{jweet.rightBtn.length}
+			</p>
 				<div
 					id="except"
 					onClick={toggleRightBtn}
 					ref={rightBtnRef}
 					class={
-						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 " +
-						(isDetail ? " " : "mt-1 mr-1 ")
+						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 "
 					}
 				>
-					{rightBtn ? (
-						<AiOutlineArrowRight size={isDetail ? 25 : 16} />
-					) : (
-						<AiOutlineArrowRight size={isDetail ? 25 : 16} />
-					)}
-				</div>
-				{!isDetail && (
-					<p id="except" class="text-sm flex flex-row items-center">
-						{jweet.rightBtn.length}
-					</p>
+				{rightBtn ? (
+					<AiOutlineArrowRight size={36} />
+				) : (
+					<AiOutlineArrowRight size={36} />
 				)}
+			</div>
+				
 			</div>
 			<Snackbar open={rightBtnSnack} autoHideDuration={2000} onClose={rightBtnClose}>
 				<Alert
@@ -88,7 +85,7 @@ const RightButton = ({ jweet, rightBtnRef, isDetail }) => {
 					variant="filled"
 					sx={{ width: "100%" }}
 				>
-					{rightBtn ? "좋아요!" : "좋아요 취소!"}
+					{rightBtn ? "투표 완료!" : "투표 취소!"}
 				</Alert>
 			</Snackbar>
 		</>

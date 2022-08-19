@@ -223,28 +223,30 @@ const YONBox = (props) => {
             )}
 
             {loading ? (
-              <div id='except' class='absolute bottom-0 w-full flex flex-row items-center mt-4 '>
-                <ReplyButton
-                  replyRef={replyRef}
-                  jweet={jweet}
-                  isDetail={false}
-                  replyOpen={replyOpen}
-                  handleReplyOpen={handleReplyOpen}
-                  handleReplyClose={handleReplyClose}
-                />
-                <RejweetButton
-                  reJweetRef={reJweetRef}
-                  jweet={jweet}
-                  isDetail={false}
-                />
-                <LikeButton likeRef={likeRef} jweet={jweet} isDetail={false} />
-                <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isDetail={false} />
-                <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isDetail={false} />
-                <BookmarkButton
-                  bookmarkRef={bookmarkRef}
-                  jweet={jweet}
-                  isDetail={false}
-                />
+              <div id='except' class='absolute bottom-0 w-full flex flex-col mt-4 '>
+                <div id='except' class='flex flex-col w-full'>
+                  <div id='except' class='flex flex-row-reverse w-full'>
+                    <div id='except' class='flex flex-col'>
+                      <LikeButton likeRef={likeRef} jweet={jweet} isMain={true} />
+                      <ReplyButton
+                        replyRef={replyRef}
+                        jweet={jweet}
+                        isMain={true}
+                        replyOpen={replyOpen}
+                        handleReplyOpen={handleReplyOpen}
+                        handleReplyClose={handleReplyClose}
+                      />
+                  </div>
+                  </div>
+                  <div id='except' class='flex flex-row justify-between w-full'>
+                    <div class='w-1/2 bg-white'>
+                    <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={true} />
+                    </div>
+                    <div class='w-1/2 bg-white flex flex-row-reverse'>
+                    <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={true} />
+                    </div>
+                  </div>
+                </div>
               </div>
             ) : (
               <Skeleton width='100%'>
@@ -263,7 +265,6 @@ const YONBox = (props) => {
             goBack={false}
             handleDeleteClose={handleDeleteClose}
           />
-
           <ImageModal
             modalRef={modalRef}
             photoURL={jweet.attachmentUrl}
