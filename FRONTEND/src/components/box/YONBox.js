@@ -144,7 +144,7 @@ const YONBox = (props) => {
             {loading ? (
               <div
                 class={
-                  "h-16 w-16 p-2" +
+                  "h-16 w-16 p-2 " +
                   (props.type !== "explore" ? "pt-4 " : "")
                 }>
                 <Avatar
@@ -162,8 +162,8 @@ const YONBox = (props) => {
           </div>
           <div class='w-full flex flex-col pl-2'>
             {loading ? (
-              <div class='w-full flex flex-row mr-2 justify-start items-center text-xs'>
-                <div class='w-full flex flex-col'>
+              <div class='w-full flex flex-row mr-2 justify-between items-center'>
+                <div class='w-2/3 flex flex-col'>
                   <h1 class='text-base font-bold'>
                     {creatorInfo.displayName}
                   </h1>
@@ -173,6 +173,22 @@ const YONBox = (props) => {
                   
                   <p class='text-gray-500'>{timeToString(jweet.createdAt)}</p>
                 </div>
+                <div class = 'flex flex-row-reverse w-full items-center'>
+                <ReplyButton
+                    replyRef={replyRef}
+                    jweet={jweet}
+                    isMain={false}
+                    replyOpen={replyOpen}
+                    handleReplyOpen={handleReplyOpen}
+                    handleReplyClose={handleReplyClose}
+                  />
+                 <BookmarkButton
+                  bookmarkRef={bookmarkRef}
+                  jweet={jweet}
+                  isMain={false}
+                  />
+                  </div>
+                  
                 <div
                   ref={funcRef}
                   id='except'
@@ -191,11 +207,11 @@ const YONBox = (props) => {
                     <div class='bg-white border border-gray-200 z-40 absolute flex flex-col top-2 right-2 w-60 rounded-md shadow-xl'>
                       <UpdateButton
                         handleOpen={handleUpdateOpen}
-                        text={"Update Yon"}
+                        text={"Update Post"}
                       />
                       <DeleteButton
                         handleOpen={handleDeleteOpen}
-                        text={"Delete Yon"}
+                        text={"Delete Post"}
                       />
                     </div>
                   )}
@@ -209,7 +225,7 @@ const YONBox = (props) => {
             {loading ? (
               <>
                 <div style={divStyle} class='break-all w-full h-auto'>
-                  <p class='w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words text-center'>
+                  <p class='w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
                     {jweet.text}
                   </p>
                 </div>
@@ -233,19 +249,6 @@ const YONBox = (props) => {
 
             {loading ? (
               <div id='except' class='w-full flex flex-row items-center mt-4 '>
-              <BookmarkButton
-                bookmarkRef={bookmarkRef}
-                jweet={jweet}
-                isMain={false}
-              />
-                <ReplyButton
-                  replyRef={replyRef}
-                  jweet={jweet}
-                  isMain={false}
-                  replyOpen={replyOpen}
-                  handleReplyOpen={handleReplyOpen}
-                  handleReplyClose={handleReplyClose}
-                />
                 <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={false} />
                 <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={false} />
               </div>

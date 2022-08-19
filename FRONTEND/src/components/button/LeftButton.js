@@ -61,7 +61,7 @@ const LeftButton = ({ jweet, leftBtnRef, isMain }) => {
 					onClick={toggleLeftBtn}
 					ref={leftBtnRef}
 					class={
-						"w-full cursor-pointer rounded-full transition delay-50 duration-300 bg-white hover:bg-red-100 border-4 border-slate-900 p-2 text-center"
+						"w-full cursor-pointer transition delay-50 duration-300 bg-white hover:bg-red-100 border-2 border-slate-200 p-2 text-center"
 					}
 				>
 					Yes
