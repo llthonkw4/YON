@@ -21,10 +21,13 @@ const ReplyButton = ({
 					onClick={handleReplyOpen}
 					id="except"
 					class={
-						"rounded-full transition delay-50 duration-300 hover:bg-purple-100 p-2 cursor-pointer"
+						"flex flex-row rounded-full transition delay-50 duration-300 hover:bg-purple-100 p-2 cursor-pointer"
 					}
 				>
-					<BsChat size={isMain? 36 : 20} />
+					<BsChat size={isMain? 24 : 20} />
+					<p 
+						class='-ml-1 text-2xl item-center'
+					>{jweet.reply.length}</p>
 				</div>
 			</div>
 			<CreateReplyModal

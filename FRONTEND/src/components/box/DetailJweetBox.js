@@ -152,19 +152,11 @@ const DetailJweetBox = (props) => {
 										/>
 									</div>
 								)}
-								<div class="w-full flex flex-row mt-2 py-2 pl-2 border-t border-b border-gray-200">
-									<div class="mr-8">
-										<b>{jweet.reply ? jweet.reply.length : 0} </b>
-										<span class="text-gray-500 ml-1">Replies</span>
-									</div>
-									<div class="mr-8">
-										<b>{jweet.like ? jweet.like.length : 0} </b>
-										<span class="text-gray-500 ml-1">Likes</span>
-									</div>
-								</div>
 								<div class="w-full flex flex-row items-center mt-4 ">
 									<LikeButton jweet={jweet} isMain={false} />
 									<ReplyButton jweet={jweet} isMain={false} />
+								</div>
+								<div class='flex flex-column'>
 									<LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={false}/>
 									<RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={false}/>
 								</div>
