@@ -167,7 +167,7 @@ const CreateJweetBox = ({ isModal, discardThread }) => {
 						placeholder="What's happening?"
 						onInput={handleResizeHeight}
 						class={
-							"w-full py-3 resize-none h-14 scroll leading-7 outline-none text-lg text-purple-300 focus:text-purple-500 " +
+							"w-full py-3 resize-none max-h-80 scroll leading-7 outline-none text-lg text-purple-300 focus:text-purple-500 " +
 							(over ? "overflow-y-scroll" : "overflow-hidden")
 						}
 					/>
