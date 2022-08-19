@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 const CreateJweetBox = ({ isModal, discardThread }) => {
 	const currentUser = useSelector((state) => state.user.currentUser);
 
+	
 	const [jweet, setJweet] = useState("");
 	const [over, setOver] = useState(false);
 	const [attachment, setAttachment] = useState("");
@@ -62,11 +63,6 @@ const CreateJweetBox = ({ isModal, discardThread }) => {
 				reply: [],
 				rejweet: [],
 				attachmentUrl,
-				leftBtn: [],
-				rightBtn: [],
-				leftText: "", // todo : init data
-				rightText: "",
-				voteCount: 0,
 			};
 			setJweet("");
 			setAttachment("");
@@ -156,8 +152,8 @@ const CreateJweetBox = ({ isModal, discardThread }) => {
 					/>
 				</div>
 			</div>
-			<form onSubmit={onSubmit} class="w-full flex flex-col pl-2 pb-2">
-				<div class="w-full border-b border-gray-200 mb-2">
+			<form onSubmit={onSubmit} class="min-w-0 w-full flex flex-col pl-2 pb-2">
+				<div class="w-auto border-b border-gray-200 mb-2">
 					<textarea
 						type="text"
 						value={jweet}
@@ -218,7 +214,7 @@ const CreateJweetBox = ({ isModal, discardThread }) => {
 						<input
 							type="submit"
 							class="text-sm w-auto rounded-full text-white font-bold bg-purple-400 flex justify-center px-4 py-2 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
-							value="post"
+							value="Jweet"
 						/>
 					</div>
 				</div>
