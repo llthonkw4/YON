@@ -99,7 +99,13 @@ const YONBox = (props) => {
   const leftTextRef = useRef();
   const rightTextRef = useRef();
   const voteCount = useRef();
-
+  const divStyle={
+    overflowY: 'scroll',
+    width: '85vh',
+    float: 'left',
+    height:'65vh',
+    position:'relative'
+  };
   const goJweet = (e) => {
     if (
       e.target !== exceptRef.current &&
@@ -199,7 +205,7 @@ const YONBox = (props) => {
             )}
             {loading ? (
               <>
-                <div class='break-all w-full h-auto'>
+                <div style={divStyle} class='break-all w-full h-auto'>
                   <p class='ml-3 mt-5 w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
                     {jweet.text}
                   </p>
