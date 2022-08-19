@@ -63,17 +63,9 @@ const RightButton = ({ jweet, rightBtnRef, isMain }) => {
 					onClick={toggleRightBtn}
 					ref={rightBtnRef}
 					class={
-						"flex flex-row cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 "
-					}
+						"w-full cursor-pointer rounded-full transition delay-50 duration-300 bg-white hover:bg-red-100 border-4 border-slate-900 p-2 text-center"					}
 				>
-				<p id="except" class="text-sm flex flex-row items-center">
-						{jweet.rightBtn.length}
-				</p>
-				{rightBtn ? (
-					<AiOutlineArrowRight size={36} />
-				) : (
-					<AiOutlineArrowRight size={36} />
-				)}
+				No
 			</div>
 				
 			</div>

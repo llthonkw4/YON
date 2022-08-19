@@ -47,7 +47,7 @@ const YONBox = (props) => {
     setDeleteOpen(false);
   };
   useEffect(() => {
-    //console.log(jweet);
+    console.log(jweet);
     return () => setLoading(false);
   }, []);
   useEffect(() => {
@@ -138,7 +138,7 @@ const YONBox = (props) => {
 
   return (
     <div id='yonbox' class='w-full select-none z-30 cursor-pointer max-w-xl hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 pt-2 pb-4  border-b border-gray-200'>
-      <div onClick={goJweet} class='w-full max-x-ml flex flex-row '>
+      <div onClick={goJweet} class='w-full max-x-ml flex flex-row'>
         <>
           <div class='flex flex-col'>
             {loading ? (
