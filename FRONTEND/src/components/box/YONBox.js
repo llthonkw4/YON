@@ -137,14 +137,14 @@ const YONBox = (props) => {
   };
 
   return (
-    <div id='yonbox' class='w-full select-none z-30 cursor-pointer hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 pt-2 pb-4  border-b border-gray-200'>
-      <div onClick={goJweet} class='w-full flex flex-row '>
+    <div id='yonbox' class='w-full select-none z-30 cursor-pointer max-w-xl hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 pt-2 pb-4  border-b border-gray-200'>
+      <div onClick={goJweet} class='w-full max-x-ml flex flex-row '>
         <>
           <div class='flex flex-col'>
             {loading ? (
               <div
                 class={
-                  "h-16 w-16 pb-2 pl-2 pr-2 " +
+                  "h-16 w-16 p-2 " +
                   (props.type !== "explore" ? "pt-4 " : "")
                 }>
                 <Avatar
@@ -153,7 +153,7 @@ const YONBox = (props) => {
                 />
               </div>
             ) : (
-              <div class='h-16 w-16 p-2'>
+              <div class='w-full h-full relative'>
                 <Skeleton variant='circular'>
                   <Avatar sx={{ width: 48, height: 48 }} />
                 </Skeleton>
@@ -162,15 +162,15 @@ const YONBox = (props) => {
           </div>
           <div class='w-full flex flex-col pl-2'>
             {loading ? (
-              <div class='w-full flex flex-row mr-2 justify-between items-center'>
-                <div class='w-full flex flex-row'>
+              <div class='w-full flex flex-row mr-2 justify-start items-center'>
+                <div class='w-full flex flex-col'>
                   <h1 class='text-base font-bold'>
                     {creatorInfo.displayName}
                   </h1>
                   <p class='text-gray-500 whitespace-pre-wrap break-words'>
                     @{creatorInfo.email ? creatorInfo.email.split("@")[0] : ""}
                   </p>
-                  <p class='text-gray-500 mx-1'>∙</p>
+                  
                   <p class='text-gray-500'>{timeToString(jweet.createdAt)}</p>
                 </div>
                 <div calss = 'flex flex-row justify-content'>
@@ -229,7 +229,7 @@ const YONBox = (props) => {
                   </p>
                 </div>
                 {jweet.attachmentUrl !== "" && (
-                  <div class='w-full mt-4 mb-2 pr-4 '>
+                  <div class='h-10 w-30 pb-20'>
                     <img
                       onClick={handlePhotoOpen}
                       ref={exceptRef}
