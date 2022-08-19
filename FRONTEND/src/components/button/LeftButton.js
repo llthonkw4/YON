@@ -61,11 +61,10 @@ const LeftButton = ({ jweet, leftBtnRef, isMain }) => {
 					onClick={toggleLeftBtn}
 					ref={leftBtnRef}
 					class={
-						"w-full cursor-pointer transition delay-50 duration-300 bg-white hover:bg-red-100 border-2 border-slate-200 p-2 text-center"
+						"-ml-2 text-5xl font-bold w-full cursor-pointer transition delay-50 duration-300 bg-white hover:bg-red-100 p-2 text-center"
 					}
 				>
-					Yes
-					
+					YES
 				</div>
 			</div>
 			<Snackbar open={leftBtnSnack} autoHideDuration={2000} onClose={leftBtnClose}>

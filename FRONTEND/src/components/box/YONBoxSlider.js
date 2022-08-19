@@ -249,20 +249,22 @@ const YONBox = (props) => {
                       {
                         (jweet.leftBtn + jweet.rightBtn).includes(currentUser.uid) ?
                         <>
-                        <div class='w-1/3 bg-transparency'>
+                        <div class='w-1/3 bg-tansparent'>
                           <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={true} />
                         </div>
-                        {jweet.leftBtn.length} vs {jweet.rightBtn.length}
-                        <div class='w-1/3 bg-transparency'>
+                        <div class='font-bold text-4xl'>
+                          {jweet.leftBtn.length} vs {jweet.rightBtn.length}
+                        </div>
+                        <div class='w-1/3 bg-tansparent'>
                           <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={true} />
                         </div>
                         </>
                         :
                         <>
-                        <div class='w-1/2 bg-transparency'>
+                        <div class='w-1/2 bg-tansparent'>
                           <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={true} />
                         </div>
-                        <div class='w-1/2 bg-transparency'>
+                        <div class='w-1/2 bg-tansparent'>
                           <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={true} />
                         </div>
                         </>
