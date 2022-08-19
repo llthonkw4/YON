@@ -14,7 +14,7 @@ const ReplyButton = ({
 			<div
 				id="except"
 				class={
-					"w-1/4 flex flex-row items-center transition delay-50 duration-300 text-black hover:text-purple-500 pr-10"
+					"w-1/4 flex flex-row items-center transition delay-50 duration-300 text-black hover:text-purple-500"
 				}
 			>
 				<div

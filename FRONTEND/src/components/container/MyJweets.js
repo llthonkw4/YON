@@ -51,18 +51,16 @@ const MyJweets = ({ match }) => {
 						/>
 					);
 				})
-			) : loading ? (
+			) : (
 				<div class="flex flex-col justify-center items-center mt-16">
 					<div class="w-2/3 font-bold text-2xl">
-						You don’t have any Jweet yet
+						You don’t have any YoN yet
 					</div>
 					<div class="w-2/3 text-gray-500">
-						Write a Jweet. When you do, it’ll show up here.
+						Write a YoN. When you do, it’ll show up here.
 					</div>
 				</div>
-			) : (
-				<LoadingBox />
-			)}
+			) }
 		</div>
 	);
 };
