@@ -86,7 +86,7 @@ const Detail = ({ match }) => {
 						<div class="w-full">
 							<CreateReplyBox id={jweet.id} />
 						</div>
-						<div class="w-full">
+						<div class="w-full pb-20">
 							{replies.map((element, index) => {
 								return (
 									<ReplyBox key={element.id} reply={element} id={element.id} />

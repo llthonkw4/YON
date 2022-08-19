@@ -1,22 +1,20 @@
-import YONBoxSlider from "components/box/YONBoxSlider";
 import LoadingBox from "components/box/LoadingBox";
+import JweetBox from "components/box/YONBox";
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "mybase";
 import React, { useEffect, useState } from "react";
-
-import { Pagination } from 'swiper';
+import { HiFire } from "react-icons/hi";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import YONBoxSlider from "components/box/YONBoxSlider";
 
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 
-
-
-const Home = () => {
+const Popular = () => {
 	const [loading, setLoading] = useState(false);
-	const [jweets, setJweets] = useState([]);
 	const [filteredJweets, setFilteredJweets] = useState([]);
 
 	useEffect(() => {
@@ -35,26 +33,14 @@ const Home = () => {
 			}
 		);
 	}, []);
-	useEffect(() => {
-		onSnapshot(
-			query(collection(db, "jweets"), orderBy("createdAt", "desc")),
-			(snapshot) => {
-				const nweetArray = snapshot.docs.map((doc) => ({
-					id: doc.id,
-					...doc.data(),
-				}));
-				setJweets(nweetArray);
-				setLoading(true);
-			}
-		);
-	}, []);
+
 	useEffect(() => {
 		return () => setLoading(false); // cleanup function을 이용
 	}, []);
 	return (
 		<div class="flex flex-row w-full justify-center">
-			<div class="h-full flex flex-col pt-16 pb-20 w-full">
-				<Swiper
+			<div class="flex flex-col pt-16 max-w-4xl">
+			<Swiper
 					slidesPerView="1"
 					mousewheel={true}
 					direction="vertical"
@@ -80,4 +66,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Popular;
