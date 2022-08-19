@@ -163,15 +163,16 @@ const YONBox = (props) => {
           <div class='w-full flex flex-col pl-2'>
             {loading ? (
               <div class='w-full flex flex-row mr-2 justify-between items-center'>
-                <div class='w-full flex flex-row'>
-                  <h1 class='text-base font-bold'>
-                    {creatorInfo.displayName}
-                  </h1>
-                  <p class='text-gray-500 whitespace-pre-wrap break-words'>
-                    @{creatorInfo.email ? creatorInfo.email.split("@")[0] : ""}
-                  </p>
-                  <p class='text-gray-500 mx-1'>∙</p>
-                  <p class='text-gray-500'>{timeToString(jweet.createdAt)}</p>
+                 <div class='w-full flex flex-row justify-start pt-4 pl-2 mb-3'>
+                  <div class='flex flex-col w-full max-w-xl'>
+                    <h1 class='text-base font-bold -mb-2'>
+                      {creatorInfo.displayName}
+                    </h1>
+                    <p class='text-gray-500 text-sm whitespace-pre-wrap break-words'>
+                      @{creatorInfo.email ? creatorInfo.email.split("@")[0] : ""}
+                    </p>
+                    <p class='text-gray-500 text-xs'>{timeToString(jweet.createdAt)}</p>
+                  </div>
                 </div>
                 <div class = 'flex flex-row-reverse w-full items-center'>
                 <ReplyButton
