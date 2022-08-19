@@ -4,7 +4,6 @@ import Snackbar from "@mui/material/Snackbar";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "mybase";
 import React, { useEffect, useState } from "react";
-import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 // import firebase from "firebase/compat/app";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "reducers/user";
@@ -84,9 +83,9 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 					}
 				>
 					{bookmark ? (
-						<AiOutlineHeart size={24} />
+						<AiTwotoneHeart size={24} />
 					) : (
-						<AiTwotoneHeart  size={24} />
+						<AiOutlineHeart  size={24} />
 					)}
 				</div>
 			</div>
@@ -98,7 +97,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 				<Alert
 					onClose={bookmarkClose}
 					severity="success"
-					color="info"
+					color="error"
 					variant="filled"
 					sx={{ width: "100%" }}
 				>
