@@ -7,7 +7,7 @@ import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import { MdBookmark, MdBookmarkBorder } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 
-const TopBar = () => {
+const TopBar = ({ selectedBar, setSelectedBar }) => {
 	const location = useLocation();
 	const [selected, setSelected] = useState(1);
 	const [profile, setProfile] = useState(false);
@@ -29,10 +29,13 @@ const TopBar = () => {
 	useEffect(() => {
 		if (location.pathname.includes("explore")) {
 			setSelected(2);
+			setSelectedBar(1);
 		} else if (location.pathname.includes("bookmark")) {
 			setSelected(3);
+			setSelectedBar(1);
 		} else if (location.pathname.includes("popular")) {
 			setSelected(4);
+			setSelectedBar(1);
 		}
 	}, [location.pathname]);
 
@@ -52,20 +55,20 @@ const TopBar = () => {
 							onClick={() => onSelected(3)}
 							class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
 						>
-							{selected === 3 ? (
+							{selected === 3 && selectedBar === 1 ? (
 								<>
-									<AiOutlineHeart size={32}/>
+									<AiTwotoneHeart size={32}/>
 								</>
 							) : (
 								<>
-									<AiTwotoneHeart size={32}/>
+									<AiOutlineHeart size={32}/>
 								</>
 							)}
 						</Link>
 					</div>
 					<Link to="/home">
 					<div
-						class="mt-2 mb-3 mx-1 px-5 rounded-full text-white font-bold bg-black flex justify-center py-2 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
+						class="mt-2 mb-3 mx-1 px-5 rounded-full text-white font-bold bg-black flex justify-center py-2 cursor-pointer"
 					>
 						YON
 					</div>
@@ -76,7 +79,7 @@ const TopBar = () => {
 							onClick={() => onSelected(4)}
 							class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
 						>
-							{selected === 4 ? (
+							{selected === 4 && selectedBar === 1 ? (
 								<>
 									<HiFire size={32}/>
 								</>

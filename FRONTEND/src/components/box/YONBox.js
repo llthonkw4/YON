@@ -101,9 +101,9 @@ const YONBox = (props) => {
   const voteCount = useRef();
   const divStyle={
     overflowY: 'scroll',
-    width: '85vh',
+    width: '100%',
     float: 'left',
-    height:'65vh',
+    height:'auto',
     position:'relative'
   };
 
