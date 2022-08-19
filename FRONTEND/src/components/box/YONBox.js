@@ -253,7 +253,7 @@ const YONBox = (props) => {
                   <div class='w-1/3 bg-transparent'>
                     <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={true} />
                   </div>
-                  <div class='w-1/3 font-bold text-4xl'>
+                  <div class='w-1/3 font-bold text-4xl pt-3'>
                     {jweet.leftBtn.length} vs {jweet.rightBtn.length}
                   </div>
                   <div class='w-1/3 bg-transparent'>
