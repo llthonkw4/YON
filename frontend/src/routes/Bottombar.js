@@ -5,7 +5,7 @@ import { BsPerson, BsPersonFill } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const BottomBar = () => {
+const BottomBar = ({ selectedBar, setSelectedBar }) => {
 	const location = useLocation();
 	const [selected, setSelected] = useState(1);
 	const currentUser = useSelector((state) => state.user.currentUser);
@@ -42,10 +42,12 @@ const BottomBar = () => {
 	}, [profile]);
 
 	useEffect(() => {
-		if (location.pathname.includes("explore")) {
+		if (location.pathname.includes("home")) {
 			setSelected(2);
+			setSelectedBar(2);
 		} else if (location.pathname.includes("profile")) {
 			setSelected(5);
+			setSelectedBar(2);
 		}
 	}, [location.pathname]);
 
@@ -61,11 +63,11 @@ const BottomBar = () => {
 					{/* 기본 트윗 홈 */}
 					<div class="mx-1 w-auto flex flex-row items-center">
 						<Link
-							to="/"
+							to="/home"
 							onClick={() => onSelected(1)}
 							class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
 						>
-							{selected === 1 ? (
+							{selected === 2 && selectedBar === 2? (
 								<>
 									{" "}
 									<AiFillHome size={32}/>
@@ -89,7 +91,7 @@ const BottomBar = () => {
 							onClick={() => onSelected(5)}
 							class="p-3 rounded-full flex flex-row text-xl mb-4 hover:bg-gray-200 transition delay-50 duration-300"
 						>
-							{selected === 5 ? (
+							{selected === 5 && selectedBar === 2 ? (
 								<>
 									<BsPersonFill size={32}/>
 								</>

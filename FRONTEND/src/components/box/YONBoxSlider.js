@@ -102,9 +102,9 @@ const YONBox = (props) => {
   const divStyle={
     overflowY: 'scroll',
     overflowX: 'hidden',
-    width: '60vh',
+    width: '100%',
     float: 'left',
-    height:'65vh',
+    height:'auto',
     position:'relative'
   };
   const goJweet = (e) => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
 	HashRouter as Router,
@@ -18,6 +18,7 @@ import Popular from "routes/Popular";
 import Profile from "routes/Profile";
 
 const AppRouter = () => {
+	const [ selectedBar, setSelectedBar] = useState(0) // 0 = deafault, 1 = topbar, 2 = bottombar
 	const dispatch = useDispatch();
 	const loginToken = useSelector((state) => state.user.loginToken);
 	const currentUser = useSelector((state) => state.user.currentUser);
@@ -53,7 +54,7 @@ const AppRouter = () => {
 						: "")
 				}
 			>
-				{loginToken === "login" && currentUser && <TopBar />}
+				{loginToken === "login" && currentUser && <TopBar selectedBar={selectedBar} setSelectedBar={setSelectedBar}/>}
 				<Switch>
 					{loginToken === "login" && currentUser ? (
 						<>
@@ -74,7 +75,7 @@ const AppRouter = () => {
 						</>
 					)}
 				</Switch>
-				{loginToken === "login" && currentUser && <BottomBar />}
+				{loginToken === "login" && currentUser && <BottomBar selectedBar={selectedBar} setSelectedBar={setSelectedBar}/>}
 			</div>
 		</Router>
 	);
