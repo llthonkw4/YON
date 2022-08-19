@@ -9,7 +9,6 @@ const loginContainer = ({ handleOpen, toggleLogin }) => {
 			<h1 class="text-xl md:text-3xl font-bold mb-8 text-center">Yon 로그인하기</h1>
 			<div class="content-center">
 				<GoogleButton isLogin={true} />
-				<GithubButton isLogin={true} />
 				<EmailButton handleOpen={handleOpen} isLogin={true} />
 			</div>
 			<h1 class="text-center">
