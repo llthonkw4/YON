@@ -47,7 +47,7 @@ const YONBox = (props) => {
     setDeleteOpen(false);
   };
   useEffect(() => {
-    console.log(jweet);
+    //console.log(jweet);
     return () => setLoading(false);
   }, []);
   useEffect(() => {
