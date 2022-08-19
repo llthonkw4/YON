@@ -68,7 +68,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 			<div
 				id="except"
 				class={
-					"mb-1 w-1/4 flex flex-row-reverse transition delay-50 duration-300 text-red-400 hover:text-red-500 " +
+					"mb-1 flex flex-row-reverse transition delay-50 duration-300 text-black hover:text-red-500 pr-10 " +
 					(bookmark ? "text-red-500 " : " ") +
 					(isMain ? "justify-center " : "")
 				}
@@ -78,16 +78,17 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 					ref={bookmarkRef}
 					id="except"
 					class={
-						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 " +
+						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2" +
 						(isMain ? "" : "mt-1 mr-1")
 					}
 				>
 					{bookmark ? (
-						<AiTwotoneHeart size={24} />
+						<AiTwotoneHeart size={isMain? 44 : 24} />
 					) : (
-						<AiOutlineHeart  size={24} />
+						<AiOutlineHeart size={isMain? 44 : 24} />
 					)}
 				</div>
+				
 			</div>
 			<Snackbar
 				open={bookmarkSnack}
@@ -103,6 +104,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 				>
 					{bookmark ? "좋아요" : "좋아요 취소"}
 				</Alert>
+				
 			</Snackbar>
 		</>
 	);
