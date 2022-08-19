@@ -68,7 +68,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 			<div
 				id="except"
 				class={
-					"mb-1 flex flex-row-reverse transition delay-50 duration-300 text-black hover:text-red-500 pr-10 " +
+					"mb-1 flex flex-row-reverse transition delay-50 duration-300 text-black hover:text-red-500 " +
 					(bookmark ? "text-red-500 " : " ") +
 					(isMain ? "justify-center " : "")
 				}

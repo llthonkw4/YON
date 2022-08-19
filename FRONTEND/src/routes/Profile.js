@@ -97,6 +97,7 @@ const Profile = ({ match }) => {
 
 						</div>
 						<Route path="/profile/yon/:id" component={MyJweets} />
+						
 					</div>
 				</>
 			) : (
