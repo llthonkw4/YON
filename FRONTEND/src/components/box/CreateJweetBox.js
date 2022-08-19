@@ -218,8 +218,8 @@ const CreateJweetBox = ({ isModal, discardThread }) => {
 					<div>
 						<input
 							type="submit"
-							class="text-sm w-auto rounded-full text-white font-bold bg-purple-400 flex justify-center px-4 py-2 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
-							value="Jweet"
+							class="text-sm w-auto rounded-full text-white font-bold bg-black flex justify-center px-4 py-2 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
+							value="Post"
 						/>
 					</div>
 				</div>
