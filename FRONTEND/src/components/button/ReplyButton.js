@@ -25,9 +25,6 @@ const ReplyButton = ({
 					}
 				>
 					<BsChat size={isMain? 24 : 20} />
-					<p 
-						class='-ml-1 text-2xl item-center'
-					>{jweet.reply.length}</p>
 				</div>
 			</div>
 			<CreateReplyModal
