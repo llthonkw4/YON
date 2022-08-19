@@ -100,11 +100,11 @@ const YONBox = (props) => {
   const rightTextRef = useRef();
   const voteCount = useRef();
   const divStyle={
-    overflowY: 'scroll',
-    width: '85vh',
+    overflowY: 'hidden',
+    width: 'auto',
     float: 'left',
-    height:'65vh',
-    position:'relative'
+    height:'100%',
+    
   };
 
   const goJweet = (e) => {
