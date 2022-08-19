@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import RightButton from "components/button/RightButton";
 import LeftButton from "components/button/LeftButton";
+import { Scrollbar } from "swiper";
 
 const YONBox = (props) => {
   const history = useHistory();
@@ -205,12 +206,12 @@ const YONBox = (props) => {
             )}
             {loading ? (
               <>
-                <div style={divStyle} class='break-all w-full h-auto'>
-                  <p class='ml-3 mt-5 w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
+                <div style={divStyle} class='break-all w-full h-auto min-w-0'>
+                  <p class='ml-3 mt-5 w-auto h-auto outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
                     {jweet.text}
                   </p>
                 {jweet.attachmentUrl !== "" && (
-                  <div class='w-full mt-4 mb-2 pr-4 '>
+                  <div class='w-full mt-4 mb-2 pr-4'>
                     <img
                       onClick={handlePhotoOpen}
                       ref={exceptRef}
@@ -224,7 +225,7 @@ const YONBox = (props) => {
               </>
             ) : (
               <Skeleton width='100%'>
-                <div class='w-full h-24  resize-none outline-none cursor-pointer bg-transparent whitespace-pre	'></div>
+                <div class='w-full h-24  resize-none outline-none cursor-pointer bg-transparent whitespace-pre'></div>
               </Skeleton>
             )}
 
@@ -248,20 +249,22 @@ const YONBox = (props) => {
                       {
                         (jweet.leftBtn + jweet.rightBtn).includes(currentUser.uid) ?
                         <>
-                        <div class='w-1/3 bg-transparency'>
+                        <div class='w-1/3 bg-tansparent'>
                           <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={true} />
                         </div>
-                        {jweet.leftBtn.length} vs {jweet.rightBtn.length}
-                        <div class='w-1/3 bg-transparency'>
+                        <div class='font-bold text-4xl'>
+                          {jweet.leftBtn.length} vs {jweet.rightBtn.length}
+                        </div>
+                        <div class='w-1/3 bg-tansparent'>
                           <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={true} />
                         </div>
                         </>
                         :
                         <>
-                        <div class='w-1/2 bg-transparency'>
+                        <div class='w-1/2 bg-tansparent'>
                           <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={true} />
                         </div>
-                        <div class='w-1/2 bg-transparency'>
+                        <div class='w-1/2 bg-tansparent'>
                           <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={true} />
                         </div>
                         </>

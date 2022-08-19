@@ -67,7 +67,7 @@ const BottomBar = ({ selectedBar, setSelectedBar }) => {
 							onClick={() => onSelected(1)}
 							class="p-3 rounded-full flex flex-row text-xl mb-2 hover:bg-gray-200 transition delay-50 duration-300"
 						>
-							{selected === 2 && selectedBar === 2? (
+							{selected === 2 && selectedBar === 2 ? (
 								<>
 									{" "}
 									<AiFillHome size={32}/>
