@@ -217,7 +217,7 @@ const CreateReplyBox = ({ id, isModal, handleReplyClose }) => {
 					<div>
 						<input
 							type="submit"
-							class="text-sm w-full rounded-2xl text-white font-bold bg-purple-400 flex justify-center px-4 py-2 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
+							class="text-sm w-full rounded-2xl text-white font-bold bg-black flex justify-center px-4 py-2 hover:bg-purple-600 transition delay-50 duration-300 cursor-pointer"
 							value="Reply"
 						/>
 					</div>
