@@ -3,7 +3,6 @@ import Skeleton from "@mui/material/Skeleton";
 import BookmarkButton from "components/button/BookmarkButton";
 import DeleteButton from "components/button/DeleteButton";
 import LikeButton from "components/button/LikeButton";
-import RejweetButton from "components/button/RejweetButton";
 import ReplyButton from "components/button/ReplyButton";
 import UpdateButton from "components/button/UpdateButton";
 import DeleteJweetModal from "components/modal/DeleteJweetModal";
@@ -138,7 +137,7 @@ const YONBox = (props) => {
   };
 
   return (
-    <div class='w-full select-none z-30 cursor-pointer hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 pt-2 pb-4  border-b border-gray-200'>
+    <div id='yonbox' class='w-full select-none z-30 cursor-pointer hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 pt-2 pb-4  border-b border-gray-200'>
       <div onClick={goJweet} class='w-full flex flex-row '>
         <>
           <div class='flex flex-col'>
@@ -234,27 +233,21 @@ const YONBox = (props) => {
 
             {loading ? (
               <div id='except' class='w-full flex flex-row items-center mt-4 '>
+              <BookmarkButton
+                bookmarkRef={bookmarkRef}
+                jweet={jweet}
+                isMain={false}
+              />
                 <ReplyButton
                   replyRef={replyRef}
                   jweet={jweet}
-                  isDetail={false}
+                  isMain={false}
                   replyOpen={replyOpen}
                   handleReplyOpen={handleReplyOpen}
                   handleReplyClose={handleReplyClose}
                 />
-                <RejweetButton
-                  reJweetRef={reJweetRef}
-                  jweet={jweet}
-                  isDetail={false}
-                />
-                <LikeButton likeRef={likeRef} jweet={jweet} isDetail={false} />
-                <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isDetail={false} />
-                <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isDetail={false} />
-                <BookmarkButton
-                  bookmarkRef={bookmarkRef}
-                  jweet={jweet}
-                  isDetail={false}
-                />
+                <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={false} />
+                <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={false} />
               </div>
             ) : (
               <Skeleton width='100%'>

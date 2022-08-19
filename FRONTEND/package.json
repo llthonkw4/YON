@@ -21,7 +21,7 @@
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-persist": "^6.0.0",
@@ -31,7 +31,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && craco start",
     "build": "craco build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -57,7 +57,8 @@
   "homepage": "https://llthonkw4.github.io/YON",
   "devDependencies": {
     "autoprefixer": "^9.8.6",
-    "postcss": "^7.0.36",
+    "postcss": "^7.0.39",
+    "postcss-loader": "^7.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.14"
   }
 }

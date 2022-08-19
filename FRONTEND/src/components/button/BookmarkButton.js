@@ -13,7 +13,7 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-const BookmarkButton = ({ jweet, bookmarkRef, isDetail }) => {
+const BookmarkButton = ({ jweet, bookmarkRef, isMain }) => {
 	const dispatch = useDispatch();
 	const currentUser = useSelector((state) => state.user.currentUser);
 	const [bookmark, setBookmark] = useState(false);
@@ -71,7 +71,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isDetail }) => {
 				class={
 					"mb-1 w-1/4 flex flex-row-reverse transition delay-50 duration-300 text-gray-400 hover:text-blue-500 " +
 					(bookmark ? "text-blue-500 " : " ") +
-					(isDetail ? "justify-center " : "")
+					(isMain ? "justify-center " : "")
 				}
 			>
 				<div
@@ -80,7 +80,7 @@ const BookmarkButton = ({ jweet, bookmarkRef, isDetail }) => {
 					id="except"
 					class={
 						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 " +
-						(isDetail ? "" : "mt-1 mr-1")
+						(isMain ? "" : "mt-1 mr-1")
 					}
 				>
 					{bookmark ? (

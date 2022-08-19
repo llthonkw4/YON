@@ -4,12 +4,11 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "mybase";
 import React, { useEffect, useState } from "react";
 import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
-// import firebase from "firebase/compat/app";
 import { useSelector } from "react-redux";
 const Alert = React.forwardRef(function Alert(props, ref) {
 	return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
-const LikeButton = ({ jweet, likeRef, isDetail }) => {
+const LikeButton = ({ jweet, likeRef, isMain }) => {
 	const currentUser = useSelector((state) => state.user.currentUser);
 	const [like, setLike] = useState(false);
 	const [likeSnack, setLikeSnack] = useState();
@@ -49,8 +48,7 @@ const LikeButton = ({ jweet, likeRef, isDetail }) => {
 				id="except"
 				class={
 					"mb-1 w-1/4 flex flex-row items-center transition delay-50 duration-300 hover:text-red-500 " +
-					(like ? "text-red-500 " : "text-gray-400 ") +
-					(isDetail ? "justify-center" : "")
+					(like ? "text-red-500 " : "text-black ")
 				}
 			>
 				<div
@@ -58,17 +56,16 @@ const LikeButton = ({ jweet, likeRef, isDetail }) => {
 					onClick={toggleLike}
 					ref={likeRef}
 					class={
-						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 " +
-						(isDetail ? " " : "mt-1 mr-1 ")
+						"cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 "
 					}
 				>
 					{like ? (
-						<AiTwotoneHeart size={24} />
+						<AiTwotoneHeart size={isMain? 44 : 16} />
 					) : (
-						<AiOutlineHeart size={24} />
+						<AiOutlineHeart size={isMain? 44 : 16} />
 					)}
 				</div>
-				{!isDetail && (
+				{!isMain && (
 					<p id="except" class="-ml-1 text-2xl flex flex-row items-center">
 						{jweet.like.length}
 					</p>
