@@ -47,7 +47,7 @@ const YONBox = (props) => {
     setDeleteOpen(false);
   };
   useEffect(() => {
-    //console.log(jweet);
+    console.log(jweet);
     return () => setLoading(false);
   }, []);
   useEffect(() => {
@@ -138,13 +138,13 @@ const YONBox = (props) => {
 
   return (
     <div id='yonbox' class='w-full select-none z-30 cursor-pointer max-w-xl hover:bg-gray-100 transition delay-50 duration-300 flex flex-col px-2 pt-2 pb-4  border-b border-gray-200'>
-      <div onClick={goJweet} class='w-full max-x-ml flex flex-row '>
+      <div onClick={goJweet} class='w-full max-x-ml flex flex-row'>
         <>
           <div class='flex flex-col'>
             {loading ? (
               <div
                 class={
-                  "h-16 w-16 p-2 " +
+                  "h-16 w-16 p-2" +
                   (props.type !== "explore" ? "pt-4 " : "")
                 }>
                 <Avatar
@@ -162,9 +162,9 @@ const YONBox = (props) => {
           </div>
           <div class='w-full flex flex-col pl-2'>
             {loading ? (
-              <div class='w-full flex flex-row mr-2 justify-start items-center'>
+              <div class='w-full flex flex-row mr-2 justify-start items-center text-xs'>
                 <div class='w-full flex flex-col'>
-                  <h1 class='text-base font-bold'>
+                  <h1 class='text-base font-bold text-sm'>
                     {creatorInfo.displayName}
                   </h1>
                   <p class='text-gray-500 whitespace-pre-wrap break-words'>
@@ -172,21 +172,6 @@ const YONBox = (props) => {
                   </p>
                   
                   <p class='text-gray-500'>{timeToString(jweet.createdAt)}</p>
-                </div>
-                <div calss = 'flex flex-row justify-content'>
-                 <BookmarkButton
-                  bookmarkRef={bookmarkRef}
-                  jweet={jweet}
-                  isMain={false}
-                  />
-                  <ReplyButton
-                    replyRef={replyRef}
-                    jweet={jweet}
-                    isMain={false}
-                    replyOpen={replyOpen}
-                    handleReplyOpen={handleReplyOpen}
-                    handleReplyClose={handleReplyClose}
-                  />
                 </div>
                 <div
                   ref={funcRef}
@@ -206,11 +191,11 @@ const YONBox = (props) => {
                     <div class='bg-white border border-gray-200 z-40 absolute flex flex-col top-2 right-2 w-60 rounded-md shadow-xl'>
                       <UpdateButton
                         handleOpen={handleUpdateOpen}
-                        text={"Update Post"}
+                        text={"Update Yon"}
                       />
                       <DeleteButton
                         handleOpen={handleDeleteOpen}
-                        text={"Delete Post"}
+                        text={"Delete Yon"}
                       />
                     </div>
                   )}
@@ -224,7 +209,7 @@ const YONBox = (props) => {
             {loading ? (
               <>
                 <div style={divStyle} class='break-all w-full h-auto'>
-                  <p class='w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words'>
+                  <p class='w-full h-auto resize-none outline-none cursor-pointer bg-transparent whitespace-pre-wrap break-words text-center'>
                     {jweet.text}
                   </p>
                 </div>
@@ -248,6 +233,19 @@ const YONBox = (props) => {
 
             {loading ? (
               <div id='except' class='w-full flex flex-row items-center mt-4 '>
+              <BookmarkButton
+                bookmarkRef={bookmarkRef}
+                jweet={jweet}
+                isMain={false}
+              />
+                <ReplyButton
+                  replyRef={replyRef}
+                  jweet={jweet}
+                  isMain={false}
+                  replyOpen={replyOpen}
+                  handleReplyOpen={handleReplyOpen}
+                  handleReplyClose={handleReplyClose}
+                />
                 <LeftButton leftBtnRef={leftBtnRef} jweet={jweet} isMain={false} />
                 <RightButton rightBtnRef={rightBtnRef} jweet={jweet} isMain={false} />
               </div>

@@ -124,11 +124,11 @@ const DetailJweetBox = (props) => {
 												<div class="bg-white border border-gray-200 z-40 absolute flex flex-col top-2 right-2 w-60 rounded-md shadow-xl">
 													<UpdateButton
 														handleOpen={handleUpdateOpen}
-														text={"Update Post"}
+														text={"Modify Yon"}
 													/>
 													<DeleteButton
 														handleOpen={handleDeleteOpen}
-														text={"Delete Post"}
+														text={"Delete Yon"}
 													/>
 												</div>
 											)}
