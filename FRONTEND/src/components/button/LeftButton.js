@@ -61,15 +61,11 @@ const LeftButton = ({ jweet, leftBtnRef, isMain }) => {
 					onClick={toggleLeftBtn}
 					ref={leftBtnRef}
 					class={
-						"flex flex-row w-full cursor-pointer rounded-full transition delay-50 duration-300 hover:bg-red-100 p-2 "
+						"w-full cursor-pointer rounded-full transition delay-50 duration-300 bg-white hover:bg-red-100 border-4 border-slate-900 p-2 text-center"
 					}
 				>
-					<button class='w-full h-full border-4 border-slate-900 border-solid rounded-full'>
-						Yes
-					</button>
-					<p id="except" class="text-sm flex flex-row items-center">
-						{jweet.leftBtn.length}
-					</p>
+					Yes
+					
 				</div>
 			</div>
 			<Snackbar open={leftBtnSnack} autoHideDuration={2000} onClose={leftBtnClose}>
