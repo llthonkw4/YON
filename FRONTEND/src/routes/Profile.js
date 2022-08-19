@@ -20,10 +20,7 @@ const Profile = ({ match }) => {
 	const [updateState, setUpdateState] = useState(false);
 	const toggleUpdateState = () => setUpdateState(!updateState);
 	const currentUser = useSelector((state) => state.user.currentUser);
-	const [selected, setSelected] = useState(1);
-	const onSelected = (num) => {
-		setSelected(num);
-	};
+
 	useEffect(() => {
 		return () => setLoading(false); // cleanup function을 이용
 	}, []);
@@ -40,15 +37,6 @@ const Profile = ({ match }) => {
 		});
 	}, [uid]);
 
-	useEffect(() => {
-		if (location.pathname.includes("/jweet")) {
-			setSelected(1);
-		} else if (location.pathname.includes("/like")) {
-			setSelected(2);
-		} else if (location.pathname.includes("/rejweet")) {
-			setSelected(3);
-		}
-	}, [location.pathname]);
 
 	const getJweets = useCallback(async () => {
 		const q = query(collection(db, "jweets"), where("creatorId", "==", uid));
@@ -120,18 +108,7 @@ const Profile = ({ match }) => {
 							</div>
 
 						</div>
-						<div class="w-full flex flex-row border-t border-gray-200 place-content-center">
-							<MenuButton
-								url={"/profile/yon/" + uid}
-								onSelected={onSelected}
-								selected={selected}
-								num={1}
-								width={"w-1/2"}	
-								text={"Questions"}
-							/>
-							
-						</div>
-							<Route path="/profile/yon/:id" component={MyJweets} />
+						<Route path="/profile/yon/:id" component={MyJweets} />
 					</div>
 				</>
 			) : (
